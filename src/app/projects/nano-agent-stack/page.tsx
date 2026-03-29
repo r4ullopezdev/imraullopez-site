@@ -6,7 +6,9 @@ import { Container } from "@/components/container";
 import { NanoHeroVisual } from "@/components/nano-hero-visual";
 import { RepoCard } from "@/components/repo-card";
 import { SectionHeading } from "@/components/section-heading";
+import { SupportCard } from "@/components/support-card";
 import { ecosystemRepos } from "@/content/projects";
+import { siteConfig } from "@/content/site";
 
 const quickstart = `npm install
 npm run demo
@@ -62,6 +64,18 @@ export default function NanoAgentStackPage() {
                 >
                   Quickstart
                 </a>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[
+                  ["Structure-first", "Departments, managers, workers, skills, and policies stay explicit."],
+                  ["Auditability", "Runs emit traces, review artifacts, and inspection layers."],
+                  ["Modular ecosystem", "Core runtime plus skills, templates, observability, docs, and benchmarks."],
+                ].map(([title, description]) => (
+                  <div key={title} className="rounded-[24px] border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-sm font-semibold text-white">{title}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">{description}</p>
+                  </div>
+                ))}
               </div>
             </div>
             <NanoHeroVisual />
@@ -161,6 +175,16 @@ export default function NanoAgentStackPage() {
       </section>
 
       <section className="pt-24">
+        <Container>
+          <SupportCard
+            title="Support NANO Agent Stack"
+            description="If this project is useful to you, or if you want to support more open-source work around agent orchestration, observability, and developer-grade AI infrastructure, you can contribute directly."
+            href={siteConfig.paypalUrl}
+          />
+        </Container>
+      </section>
+
+      <section className="pt-24">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-10">
             <SectionHeading
@@ -182,7 +206,19 @@ export default function NanoAgentStackPage() {
               ))}
             </div>
           </div>
-          <CodeWindow title="Quick demo" code={quickstart} />
+          <div className="space-y-5">
+            <CodeWindow title="Quick demo" code={quickstart} />
+            <div className="rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.12),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Artifacts</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {["latest-run.md", "latest-run.json", "latest-trace.md", "latest-run-inspector.html"].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-[#0d1623] px-4 py-3 text-sm text-slate-200">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

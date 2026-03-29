@@ -3,6 +3,7 @@ import { Badge } from "@/components/badge";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
+import { SupportCard } from "@/components/support-card";
 import { projects } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 
@@ -47,10 +48,23 @@ export default function HomePage() {
                   GitHub
                 </a>
               </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[
+                  ["Open-source ecosystem", "NANO Agent Stack and its satellite repositories."],
+                  ["Technical writing", "Architecture, design notes, docs, and visual project framing."],
+                  ["Builder focus", "Agent systems, orchestration, observability, and reusable workflows."],
+                ].map(([title, description]) => (
+                  <div key={title} className="rounded-[24px] border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-sm font-semibold text-white">{title}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">{description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="rounded-[36px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_30%),linear-gradient(180deg,#0b1321,#08111b)] p-6 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
+            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.14),transparent_35%),linear-gradient(180deg,#0b1321,#08111b)] p-6 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:34px_34px] opacity-30" />
               <div className="space-y-5">
-                <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
+                <div className="relative rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Current focus</p>
                   <h2 className="mt-4 text-2xl font-semibold text-white">NANO Agent Stack</h2>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -58,12 +72,12 @@ export default function HomePage() {
                     and human checkpoints for serious agentic workflows.
                   </p>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                <div className="relative grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                     <p className="text-sm font-semibold text-white">Open-source ecosystem</p>
                     <p className="mt-2 text-sm leading-6 text-slate-400">Core runtime, skills, templates, observability, docs, and benchmark harness.</p>
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                     <p className="text-sm font-semibold text-white">Builder positioning</p>
                     <p className="mt-2 text-sm leading-6 text-slate-400">Developer-oriented architecture with a premium presentation layer for collaborators and evaluators.</p>
                   </div>
@@ -107,6 +121,16 @@ export default function HomePage() {
               <ProjectCard key={project.slug} project={project} featured={index === 0} />
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="pt-24">
+        <Container>
+          <SupportCard
+            title="Support the open-source work behind the portfolio"
+            description="If you want to support the continued development of NANO Agent Stack, the surrounding documentation, and future open-source infrastructure work, you can do it directly here."
+            href={siteConfig.paypalUrl}
+          />
         </Container>
       </section>
     </div>

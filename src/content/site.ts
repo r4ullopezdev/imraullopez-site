@@ -7,5 +7,5 @@ export const siteConfig = {
   tagline: "Open-source infrastructure for agent systems that need structure, auditability, and technical credibility.",
   githubUrl: "https://github.com/r4ullopezdev",
   primaryProjectUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
+  paypalUrl: "https://paypal.me/imraullopezpty",
 };
-
