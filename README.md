@@ -62,6 +62,26 @@ The site is intentionally structured so it can expand into:
 - more project pages
 - future GitHub API integrations
 
+## Social sharing and metadata
+
+The site includes:
+
+- root Open Graph image
+- project-specific Open Graph image for `/projects/nano-agent-stack`
+- `robots.ts`
+- `sitemap.ts`
+
+## Deploy
+
+The project is ready for Vercel deployment.
+
+Suggested path:
+
+1. Import the repository into Vercel
+2. Connect the custom domain `imraullopez.com`
+3. Set the production domain in Vercel project settings
+4. Redeploy so metadata and OG image routes resolve under the final domain
+
 ## Suggested next iteration
 
 - add OG image generation

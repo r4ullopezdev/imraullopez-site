@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArchitectureVisual } from "@/components/architecture-visual";
 import { Badge } from "@/components/badge";
@@ -22,6 +23,12 @@ const roadmap = [
   "workflow templates and examples",
   "public beta with stronger provider and memory boundaries",
 ];
+
+export const metadata: Metadata = {
+  title: "NANO Agent Stack | imraullopez.com",
+  description:
+    "A premium project page for NANO Agent Stack, an open-source ecosystem for modular multi-agent orchestration, auditability, and developer-oriented AI infrastructure.",
+};
 
 export default function NanoAgentStackPage() {
   return (
