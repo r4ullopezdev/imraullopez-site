@@ -6,24 +6,24 @@ export function HomeHeroPanel() {
       <div className="pulse-orbit absolute bottom-8 right-10 h-28 w-28 rounded-full bg-blue-400/10 blur-2xl [animation-delay:1s]" />
       <div className="relative space-y-5">
         <div className="float-slow rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Current focus</p>
-          <h2 className="mt-4 text-2xl font-semibold text-white">NANO Agent Stack</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Founder profile</p>
+          <h2 className="mt-4 text-2xl font-semibold text-white">Founder-engineer with a bias for execution</h2>
           <p className="mt-3 text-sm leading-7 text-slate-300">
-            A modular ecosystem for organizations-as-systems: departments, managers, workers, skills, trace hooks, and human checkpoints for serious agentic workflows.
+            Building applied AI systems, automation architecture, orchestration runtimes, and technical presentation layers with an emphasis on clarity, rigor, and shipping real systems.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
-            <p className="text-sm font-semibold text-white">Open-source ecosystem</p>
-            <p className="mt-2 text-sm leading-6 text-slate-400">Core runtime, skills, templates, observability, docs, and benchmark harness.</p>
+            <p className="text-sm font-semibold text-white">Core capabilities</p>
+            <p className="mt-2 text-sm leading-6 text-slate-400">AI systems, workflow architecture, observability, applied automation, and multi-agent infrastructure.</p>
           </div>
           <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
-            <p className="text-sm font-semibold text-white">Builder positioning</p>
-            <p className="mt-2 text-sm leading-6 text-slate-400">Developer-oriented architecture with a premium presentation layer for collaborators and evaluators.</p>
+            <p className="text-sm font-semibold text-white">Flagship project</p>
+            <p className="mt-2 text-sm leading-6 text-slate-400">NANO Agent Stack anchors the portfolio as the main open-source ecosystem and strongest technical showcase.</p>
           </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
-          {["orchestration", "observability", "human checkpoints"].map((item, index) => (
+          {["ai systems", "automation architecture", "open-source infra"].map((item, index) => (
             <div
               key={item}
               className={`rounded-full border border-white/10 bg-[#0f1826] px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.22em] text-slate-300 ${

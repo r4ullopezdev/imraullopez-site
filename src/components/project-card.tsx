@@ -33,7 +33,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
             href={project.href}
-            className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-950 transition hover:bg-cyan-200"
+            className="rounded-full bg-gradient-to-r from-cyan-200 to-white px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(56,189,248,0.18)] transition hover:from-white hover:to-cyan-200"
           >
             Explore project
           </Link>
@@ -50,4 +50,3 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
     </article>
   );
 }
-

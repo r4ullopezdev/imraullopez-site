@@ -9,12 +9,12 @@ export default function ProjectsPage() {
       <Container className="space-y-12">
         <SectionHeading
           eyebrow="Project index"
-          title="Open-source systems, developer tooling, and AI infrastructure work."
-          description="This index is designed as a scalable project layer. New case studies, product pages, and long-form technical writeups can slot into the same structure later."
+          title="A focused project arena anchored by one flagship ecosystem."
+          description="For now this page stays intentionally minimal and centered on the main open-source system in the portfolio: NANO Agent Stack."
         />
-        <div className="grid gap-5 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} featured={index === 0} />
+        <div className="mx-auto grid max-w-5xl gap-5 lg:grid-cols-1">
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} featured />
           ))}
         </div>
       </Container>
