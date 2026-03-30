@@ -33,7 +33,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
             href={project.href}
-            className="rounded-full bg-gradient-to-r from-cyan-200 to-white px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(56,189,248,0.18)] transition hover:from-white hover:to-cyan-200"
+            className="rounded-full border border-white/70 bg-[#effbff] px-4 py-2 text-sm font-semibold text-[#05111b] shadow-[0_18px_40px_rgba(56,189,248,0.18)] transition hover:bg-white"
           >
             Explore project
           </Link>
@@ -41,7 +41,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             href={project.repoUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/12 px-4 py-2 text-sm font-medium text-white transition hover:border-cyan-400/35 hover:bg-cyan-400/8"
+            className="rounded-full border border-cyan-300/35 bg-[#0d1827] px-4 py-2 text-sm font-medium text-white transition hover:border-cyan-200/80 hover:bg-[#132338]"
           >
             View GitHub
           </a>

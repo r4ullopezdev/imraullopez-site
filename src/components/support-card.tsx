@@ -31,7 +31,7 @@ export function SupportCard({
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-emerald-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-200"
+            className="rounded-full border border-white/70 bg-[#ecfff8] px-5 py-2.5 text-sm font-semibold text-[#05111b] transition hover:bg-white"
           >
             Donate via PayPal
           </a>
