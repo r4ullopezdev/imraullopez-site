@@ -15,11 +15,11 @@ export const projects: Project[] = [
     name: "NANO Agent Stack",
     kicker: "Flagship open-source ecosystem",
     description:
-      "A modular orchestration framework for modeling departments, managers, workers, skills, policies, memory boundaries, and traceable execution in multi-agent systems.",
+      "A modular orchestration framework for modeling departments, managers, workers, skills, approval gates, provider boundaries, memory adapters, and traceable execution in multi-agent systems.",
     href: "/projects/nano-agent-stack",
     repoUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
     status: "Alpha",
-    highlights: ["Orchestrator runtime", "Provider abstraction", "Traceable execution"],
+    highlights: ["Human approval gates", "Experimental providers", "Traceable execution"],
   },
 ];
 

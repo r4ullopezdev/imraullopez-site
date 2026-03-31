@@ -14,14 +14,17 @@ import { siteConfig } from "@/content/site";
 const quickstart = `npm install
 npm run demo
 npm run demo:content
-npm run demo:support`;
+npm run demo:support
+npm run demo:openai
+npm run validate:demo
+npm run templates`;
 
 const roadmap = [
   "v0.1 core runtime",
   "skills and package-level extensibility",
   "observability and trace exports",
   "workflow templates and examples",
-  "public beta with stronger provider and memory boundaries",
+  "public beta with stronger persistent memory and distributed execution boundaries",
 ];
 
 export const metadata: Metadata = {
@@ -47,7 +50,7 @@ export default function NanoAgentStackPage() {
                 </p>
                 <p className="max-w-2xl text-pretty text-lg leading-8 text-slate-300">
                   NANO Agent Stack is an open-source ecosystem for modeling departments, hierarchies, skills, policies,
-                  memory boundaries, trace hooks, and human checkpoints as explicit infrastructure primitives.
+                  memory boundaries, trace hooks, approval gates, and experimental provider seams as explicit infrastructure primitives.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -75,7 +78,7 @@ export default function NanoAgentStackPage() {
               <div className="grid gap-4 sm:grid-cols-3">
                 {[
                   ["Structure-first", "Departments, managers, workers, skills, and policies stay explicit."],
-                  ["Auditability", "Runs emit traces, review artifacts, and inspection layers."],
+                  ["Auditability", "Runs emit traces, approval decisions, review artifacts, and inspection layers."],
                   ["Modular ecosystem", "Core runtime plus skills, templates, observability, docs, and benchmarks."],
                 ].map(([title, description]) => (
                   <div key={title} className="rounded-[24px] border border-white/10 bg-white/[0.03] p-4">
@@ -118,10 +121,33 @@ export default function NanoAgentStackPage() {
           />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {[
-              ["Orchestrator", "Coordinates task execution, provider strategy, policy enforcement, and artifact generation."],
+              ["Orchestrator", "Coordinates task execution, provider strategy, policy enforcement, approvals, and artifact generation."],
               ["Departments", "Own operational domains like research, content, support, or internal operations."],
               ["Managers and workers", "Managers decompose work, workers execute through skills and provider-assisted notes."],
-              ["Skills, memory, and traces", "Reusable capabilities, pluggable state boundaries, and execution chronology."],
+              ["Skills, memory, traces, approvals", "Reusable capabilities, pluggable state boundaries, execution chronology, and gated human review."],
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-[26px] border border-white/10 bg-white/[0.04] p-6">
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="pt-24">
+        <Container className="space-y-10">
+          <SectionHeading
+            eyebrow="Runtime advances"
+            title="Recent work pushed the runtime closer to real operational control."
+            description="The current alpha now includes human approval gates that can block execution, file-backed memory, CLI validation, template discovery, and experimental provider seams with tested HTTP boundaries."
+          />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              ["Approval gates", "Checkpointed tasks can now be approved or rejected, and rejection blocks downstream worker execution."],
+              ["Provider seams", "OpenAI Responses and Anthropic Messages are integrated through a shared HTTP provider layer and tested request/response contracts."],
+              ["File-backed memory", "Examples can persist workflow state and approval decisions to disk for repeatable local runs."],
+              ["Template bridge", "The core CLI can discover the template catalog without collapsing the whole ecosystem into one monolith."],
             ].map(([title, description]) => (
               <div key={title} className="rounded-[26px] border border-white/10 bg-white/[0.04] p-6">
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -203,8 +229,8 @@ export default function NanoAgentStackPage() {
               {[
                 ["1. Input", "A request enters the orchestrator with a desired output and policy boundaries."],
                 ["2. Routing", "The task is assigned to a department manager who owns the workflow domain."],
-                ["3. Execution", "Workers invoke skills and provider-assisted notes to complete specialized subwork."],
-                ["4. Result", "The run emits markdown, JSON trace data, checkpoints, and visual inspection artifacts."],
+                ["3. Approval gate", "If a checkpoint is configured, a reviewer can approve or reject execution before workers proceed."],
+                ["4. Execution + result", "Approved runs invoke skills and provider-assisted notes, then emit markdown, JSON trace data, approvals, and visual inspection artifacts."],
               ].map(([title, description]) => (
                 <div key={title} className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
                   <p className="text-sm font-semibold text-white">{title}</p>
@@ -224,6 +250,9 @@ export default function NanoAgentStackPage() {
                   </div>
                 ))}
               </div>
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                Current demos also capture approval outcomes inside the run report and can persist memory state to local artifacts for repeatable review.
+              </p>
             </div>
           </div>
         </Container>
@@ -234,7 +263,7 @@ export default function NanoAgentStackPage() {
           <SectionHeading
             eyebrow="Quickstart"
             title="A small but real developer path from install to demo run."
-            description="The goal is not a fake landing page. The GitHub repo already includes a CLI, executable demos, tests, generated artifacts, and supporting satellite repositories."
+            description="The goal is not a fake landing page. The GitHub repo already includes a CLI, executable demos, approval control flags, generated artifacts, tests, and supporting ecosystem packages."
           />
           <div className="rounded-[32px] border border-white/10 bg-white/[0.04] p-8">
             <CodeWindow title="Local run" code={quickstart} />
@@ -247,7 +276,7 @@ export default function NanoAgentStackPage() {
           <SectionHeading
             eyebrow="Roadmap"
             title="A staged path from alpha runtime to broader public beta."
-            description="The roadmap stays narrow and honest: stronger providers, better templates, richer observability, and more durable memory adapters without pretending the stack is already production-complete."
+            description="The roadmap stays narrow and honest: stronger provider boundaries, richer memory adapters, distributed execution control, and better observability without pretending the stack is already production-complete."
           />
           <div className="grid gap-5 md:grid-cols-5">
             {roadmap.map((item) => (
