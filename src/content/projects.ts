@@ -19,7 +19,7 @@ export const projects: Project[] = [
     href: "/projects/nano-agent-stack",
     repoUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
     status: "Alpha",
-    highlights: ["Human approval gates", "Experimental providers", "Traceable execution"],
+    highlights: ["Human approval gates", "SQLite memory", "Traceable execution"],
   },
 ];
 

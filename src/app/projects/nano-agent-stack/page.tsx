@@ -50,7 +50,7 @@ export default function NanoAgentStackPage() {
                 </p>
                 <p className="max-w-2xl text-pretty text-lg leading-8 text-slate-300">
                   NANO Agent Stack is an open-source ecosystem for modeling departments, hierarchies, skills, policies,
-                  memory boundaries, trace hooks, approval gates, and experimental provider seams as explicit infrastructure primitives.
+                  memory boundaries, trace hooks, approval gates, SQLite-backed persistence, and experimental provider seams as explicit infrastructure primitives.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -140,14 +140,14 @@ export default function NanoAgentStackPage() {
           <SectionHeading
             eyebrow="Runtime advances"
             title="Recent work pushed the runtime closer to real operational control."
-            description="The current alpha now includes human approval gates that can block execution, file-backed memory, CLI validation, template discovery, and experimental provider seams with tested HTTP boundaries."
+            description="The current alpha now includes human approval gates that can block execution, SQLite-backed memory, CLI validation, template discovery, a richer run inspector, and experimental provider seams with tested HTTP boundaries."
           />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {[
               ["Approval gates", "Checkpointed tasks can now be approved or rejected, and rejection blocks downstream worker execution."],
               ["Provider seams", "OpenAI Responses and Anthropic Messages are integrated through a shared HTTP provider layer and tested request/response contracts."],
-              ["File-backed memory", "Examples can persist workflow state and approval decisions to disk for repeatable local runs."],
-              ["Template bridge", "The core CLI can discover the template catalog without collapsing the whole ecosystem into one monolith."],
+              ["SQLite memory", "Examples can persist workflow state and approval decisions into a local SQLite store for more durable repeatable runs."],
+              ["Inspector + benchmark", "The ecosystem now includes a richer run inspector and a 2x2 benchmark matrix for workflow shape and approval posture."],
             ].map(([title, description]) => (
               <div key={title} className="rounded-[26px] border border-white/10 bg-white/[0.04] p-6">
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -251,7 +251,7 @@ export default function NanoAgentStackPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                Current demos also capture approval outcomes inside the run report and can persist memory state to local artifacts for repeatable review.
+                Current demos also capture approval outcomes inside the run report, persist memory into SQLite when configured, and feed a richer HTML inspector for review.
               </p>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function NanoAgentStackPage() {
           <SectionHeading
             eyebrow="Roadmap"
             title="A staged path from alpha runtime to broader public beta."
-            description="The roadmap stays narrow and honest: stronger provider boundaries, richer memory adapters, distributed execution control, and better observability without pretending the stack is already production-complete."
+            description="The roadmap stays narrow and honest: stronger provider boundaries, richer persistent memory, distributed execution control, and better observability without pretending the stack is already production-complete."
           />
           <div className="grid gap-5 md:grid-cols-5">
             {roadmap.map((item) => (
