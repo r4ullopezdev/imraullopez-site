@@ -27,6 +27,13 @@ const roadmap = [
   "public beta with stronger persistent memory and distributed execution boundaries",
 ];
 
+const benchmarkRows = [
+  ["single-agent", "no-approval", "fastest path, weakest governance"],
+  ["single-agent", "approval-gated", "more reviewable, still structurally shallow"],
+  ["department-based", "no-approval", "better decomposition and traceability"],
+  ["department-based", "approval-gated", "strongest governance and audit posture"],
+];
+
 export const metadata: Metadata = {
   title: "NANO Agent Stack | imraullopez.com",
   description:
@@ -267,6 +274,42 @@ export default function NanoAgentStackPage() {
           />
           <div className="rounded-[32px] border border-white/10 bg-white/[0.04] p-8">
             <CodeWindow title="Local run" code={quickstart} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="pt-24">
+        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeading
+            eyebrow="Benchmarks and artifacts"
+            title="The ecosystem now exposes both structural scores and historical runtime traces."
+            description="`nano-agent-bench` now combines a structural comparison matrix with runtime-backed department executions from the core orchestrator. `nano-agent-observability` can also archive multiple runs into a simple historical record for later inspection."
+          />
+          <div className="space-y-5">
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.04] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Benchmark matrix</p>
+              <div className="mt-4 space-y-3">
+                {benchmarkRows.map(([variant, approval, note]) => (
+                  <div key={`${variant}-${approval}`} className="rounded-[20px] border border-white/10 bg-[#0d1623] px-4 py-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">{variant}</span>
+                      <span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">{approval}</span>
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">{note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.04] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">Historical artifacts</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {["artifacts/results.md", "artifacts/results.json", "artifacts/runtime-history.json", "artifacts/latest-run-inspector.html"].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-[#0d1623] px-4 py-3 text-sm text-slate-200">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
