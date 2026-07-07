@@ -26,20 +26,17 @@ export function PageHero({
           <div className="space-y-7">
             <Badge>{eyebrow}</Badge>
             <div className="space-y-5">
-              <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-tight text-[#102033] sm:text-6xl lg:text-7xl">
                 {title}
               </h1>
-              <p className="max-w-3xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
+              <p className="max-w-3xl text-pretty text-lg leading-8 text-[#5a6472] sm:text-xl">
                 {description}
               </p>
             </div>
             {(primaryCta || secondaryCta) && (
               <div className="flex flex-wrap gap-4">
                 {primaryCta ? (
-                  <ButtonLink
-                    href={primaryCta.href}
-                    external={primaryCta.external}
-                  >
+                  <ButtonLink href={primaryCta.href} external={primaryCta.external}>
                     {primaryCta.label}
                   </ButtonLink>
                 ) : null}

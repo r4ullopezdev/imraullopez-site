@@ -13,13 +13,13 @@ export function CtaBand({ title, text, primary, secondary }: CtaBandProps) {
   return (
     <section className="pt-24">
       <Container>
-        <GlassPanel className="overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.14),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-8 sm:p-10">
+        <GlassPanel className="overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(160,195,234,0.18),transparent_34%),linear-gradient(180deg,#fffdf9,rgba(255,255,255,0.95))] p-8 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-4">
-              <h2 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              <h2 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-[#102033] sm:text-4xl">
                 {title}
               </h2>
-              <p className="max-w-2xl text-pretty text-base leading-8 text-slate-300">
+              <p className="max-w-2xl text-pretty text-base leading-8 text-[#5a6472]">
                 {text}
               </p>
             </div>

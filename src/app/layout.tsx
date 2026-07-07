@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(`https://${siteConfig.domain}`),
   keywords: [
     "IA para empresas",
-    "automatización empresarial",
+    "automatizacion empresarial",
     "agentes de IA",
     "funnels",
     "desarrollo web",
-    "automatización comercial",
+    "automatizacion comercial",
   ],
   openGraph: {
     title: siteConfig.title,
@@ -54,13 +54,13 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${headingFont.variable} ${monoFont.variable} h-full antialiased dark`}
+      className={`${headingFont.variable} ${monoFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-ink text-white">
+      <body className="min-h-full bg-ink text-[color:var(--color-copy)]">
         <AnalyticsScripts />
         <div className="relative min-h-screen overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.14),transparent_24%),radial-gradient(circle_at_85%_15%,rgba(14,165,233,0.10),transparent_20%),linear-gradient(180deg,#050b14,#09111c_35%,#08111b_100%)]" />
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(241,199,151,0.35),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(126,180,255,0.24),transparent_22%),linear-gradient(180deg,#fcfaf6,#f5efe6_38%,#f7f3ec_100%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-[460px] bg-[linear-gradient(180deg,rgba(255,255,255,0.72),transparent)]" />
           <div className="relative z-10 flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>

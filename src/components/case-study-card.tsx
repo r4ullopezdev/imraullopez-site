@@ -16,18 +16,18 @@ export function CaseStudyCard({
   return (
     <GlassPanel className="h-full p-7">
       <div className="space-y-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8a5320]">
           {label}
         </p>
-        <h3 className="text-2xl font-semibold tracking-tight text-white">
+        <h3 className="text-2xl font-semibold tracking-tight text-[#102033]">
           {title}
         </h3>
-        <p className="text-sm leading-7 text-slate-300">{summary}</p>
+        <p className="text-sm leading-7 text-[#5a6472]">{summary}</p>
         <div className="flex flex-wrap gap-2">
           {impact.map((item) => (
             <span
               key={item}
-              className="rounded-full border border-white/10 bg-[#0c1725] px-3 py-1 text-xs text-slate-200"
+              className="rounded-full border border-[#dbe2ea] bg-[#f8fbff] px-3 py-1 text-xs text-[#334155]"
             >
               {item}
             </span>

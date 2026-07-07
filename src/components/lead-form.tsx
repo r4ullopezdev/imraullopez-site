@@ -49,7 +49,9 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
 
     if (!response.ok) {
       setLoading(false);
-      setError("No se pudo enviar el formulario. Inténtalo otra vez o escríbeme por WhatsApp.");
+      setError(
+        "No se pudo enviar el formulario. Intentalo otra vez o escribeme por WhatsApp.",
+      );
       return;
     }
 
@@ -66,19 +68,20 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "space-y-4 rounded-[28px] border border-white/10 bg-[#091321]/90 p-6 shadow-[0_18px_80px_rgba(0,0,0,0.28)]",
+        "space-y-4 rounded-[28px] border border-[#d9dfe7] bg-white p-6 shadow-[0_20px_70px_rgba(22,34,55,0.12)]",
         compact ? "p-5" : "p-7",
       )}
     >
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
-          Diagnóstico IA
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8a5320]">
+          Diagnostico IA
         </p>
-        <h3 className="text-2xl font-semibold text-white">
-          Cuéntame qué quieres automatizar
+        <h3 className="text-2xl font-semibold text-[#102033]">
+          Cuentame que quieres automatizar
         </h3>
-        <p className="text-sm leading-7 text-slate-300">
-          Trabajo con empresas que quieren implementar sistemas reales, no solo explorar ideas sin ejecución.
+        <p className="text-sm leading-7 text-[#5a6472]">
+          Trabajo con empresas que quieren implementar sistemas reales, no solo
+          explorar ideas sin ejecucion.
         </p>
       </div>
 
@@ -92,7 +95,9 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
         <Field
           label="Empresa"
           value={form.company}
-          onChange={(value) => setForm((current) => ({ ...current, company: value }))}
+          onChange={(value) =>
+            setForm((current) => ({ ...current, company: value }))
+          }
           required
         />
         <Field
@@ -105,20 +110,24 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
         <Field
           label="WhatsApp"
           value={form.whatsapp}
-          onChange={(value) => setForm((current) => ({ ...current, whatsapp: value }))}
+          onChange={(value) =>
+            setForm((current) => ({ ...current, whatsapp: value }))
+          }
           required
         />
       </div>
 
       <label className="block space-y-2">
-        <span className="text-sm font-medium text-slate-200">Presupuesto estimado</span>
+        <span className="text-sm font-medium text-[#233447]">
+          Presupuesto estimado
+        </span>
         <select
           value={form.budget}
           onChange={(event) =>
             setForm((current) => ({ ...current, budget: event.target.value }))
           }
           required
-          className="w-full rounded-2xl border border-white/10 bg-[#0c1725] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300/50"
+          className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
         >
           <option value="">Selecciona un rango</option>
           {leadBudgetOptions.map((option) => (
@@ -130,7 +139,9 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
       </label>
 
       <label className="block space-y-2">
-        <span className="text-sm font-medium text-slate-200">Problema principal</span>
+        <span className="text-sm font-medium text-[#233447]">
+          Problema principal
+        </span>
         <textarea
           value={form.problem}
           onChange={(event) =>
@@ -138,19 +149,19 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
           }
           required
           rows={compact ? 4 : 6}
-          className="w-full rounded-2xl border border-white/10 bg-[#0c1725] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300/50"
-          placeholder="Describe qué proceso manual, comercial o administrativo quieres resolver."
+          className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
+          placeholder="Describe que proceso manual, comercial o administrativo quieres resolver."
         />
       </label>
 
-      {error ? <p className="text-sm text-rose-300">{error}</p> : null}
+      {error ? <p className="text-sm text-rose-500">{error}</p> : null}
 
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex w-full items-center justify-center rounded-full border border-cyan-200/70 bg-[#f3fbff] px-5 py-3 text-sm font-semibold text-[#06111c] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex w-full items-center justify-center rounded-full border border-[#102c46] bg-[#102c46] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0d2439] disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {loading ? "Enviando..." : "Agendar diagnóstico IA"}
+        {loading ? "Enviando..." : "Agendar diagnostico IA"}
       </button>
     </form>
   );
@@ -173,13 +184,13 @@ function Field({
 }: FieldProps) {
   return (
     <label className="block space-y-2">
-      <span className="text-sm font-medium text-slate-200">{label}</span>
+      <span className="text-sm font-medium text-[#233447]">{label}</span>
       <input
         type={type}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         required={required}
-        className="w-full rounded-2xl border border-white/10 bg-[#0c1725] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300/50"
+        className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
       />
     </label>
   );

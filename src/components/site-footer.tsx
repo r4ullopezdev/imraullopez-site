@@ -4,16 +4,16 @@ import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/8 py-12">
+    <footer className="border-t border-[#e6ddd1] py-12">
       <Container className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-3">
-          <p className="text-sm font-medium text-white">{siteConfig.name}</p>
-          <p className="max-w-2xl text-sm leading-7 text-slate-400">
-            Arquitectura de soluciones IA, automatización comercial, agentes
+          <p className="text-sm font-medium text-[#102033]">{siteConfig.name}</p>
+          <p className="max-w-2xl text-sm leading-7 text-[#5a6472]">
+            Arquitectura de soluciones IA, automatizacion comercial, agentes
             inteligentes, funnels y sistemas operativos para empresas que
-            quieren ahorrar tiempo, vender más y ejecutar mejor.
+            quieren ahorrar tiempo, vender mas y ejecutar mejor.
           </p>
-          <div className="flex flex-wrap gap-4 text-sm text-slate-300">
+          <div className="flex flex-wrap gap-4 text-sm text-[#334155]">
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             {siteConfig.whatsappUrl ? (
               <a href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">
@@ -25,16 +25,23 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <div className="grid gap-3 text-sm text-slate-400 md:justify-self-end">
+        <div className="grid gap-3 text-sm text-[#5a6472] md:justify-self-end">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-white">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-[#102033]"
+            >
               {item.label}
             </Link>
           ))}
-          <Link href="/lp/automatizacion-7-dias" className="transition hover:text-white">
-            Landing 7 días
+          <Link
+            href="/lp/automatizacion-7-dias"
+            className="transition hover:text-[#102033]"
+          >
+            Landing 7 dias
           </Link>
-          <Link href="/gracias" className="transition hover:text-white">
+          <Link href="/gracias" className="transition hover:text-[#102033]">
             Gracias
           </Link>
         </div>

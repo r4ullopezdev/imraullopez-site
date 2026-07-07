@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #050b14;
-  --color-panel: #0b1421;
-  --color-sand: #f1e9d8;
+  --color-ink: #f7f3ec;
+  --color-panel: #ffffff;
+  --color-sand: #c8742a;
+  --color-copy: #102033;
+  --color-muted: #5a6472;
   --font-sans: var(--font-heading);
   --font-mono: var(--font-mono);
 }
@@ -19,7 +21,8 @@ html {
 body {
   margin: 0;
   font-family: var(--font-heading), sans-serif;
-  color: white;
+  color: var(--color-copy);
+  background: var(--color-ink);
 }
 
 a {
@@ -28,7 +31,7 @@ a {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
+  background: rgba(61, 145, 255, 0.18);
 }
 
 @keyframes float-slow {
