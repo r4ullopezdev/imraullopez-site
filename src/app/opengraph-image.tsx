@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/content/site";
 
 export const size = {
   width: 1200,
@@ -49,7 +50,7 @@ export default function Image() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: 22, opacity: 0.8 }}>imraullopez.com</span>
-            <span style={{ fontSize: 16, opacity: 0.55 }}>Founder-engineer / AI infrastructure</span>
+            <span style={{ fontSize: 16, opacity: 0.55 }}>IA, automatización y sistemas comerciales</span>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 900 }}>
@@ -67,13 +68,14 @@ export default function Image() {
               color: "rgba(241,233,216,0.92)",
             }}
           >
-            Open-source systems
+            Arquitecto de soluciones IA
           </div>
           <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.03 }}>
-            Raul Lopez builds premium infrastructure for agent systems.
+            {siteConfig.heroMessage}
           </div>
           <div style={{ fontSize: 26, lineHeight: 1.45, color: "rgba(226,232,240,0.82)", maxWidth: 900 }}>
-            Multi-agent orchestration, observability, reusable workflows, and a stronger visual layer for serious technical work.
+            Diseño agentes, automatizaciones, funnels y sistemas que ahorran
+            tiempo, reducen trabajo manual y aceleran operaciones comerciales.
           </div>
         </div>
       </div>

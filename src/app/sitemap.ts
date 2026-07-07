@@ -3,20 +3,20 @@ import { siteConfig } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = `https://${siteConfig.domain}`;
-
-  return [
-    {
-      url: `${base}/`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${base}/projects`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${base}/projects/nano-agent-stack`,
-      lastModified: new Date(),
-    },
+  const routes = [
+    "/",
+    "/sobre-mi",
+    "/servicios",
+    "/portfolio",
+    "/contacto",
+    "/gracias",
+    "/lp/automatizacion-7-dias",
+    "/lp/seguimiento-leads",
+    "/lp/automatizacion-interna",
   ];
-}
 
+  return routes.map((route) => ({
+    url: `${base}${route}`,
+    lastModified: new Date(),
+  }));
+}

@@ -1,11 +1,298 @@
 export const siteConfig = {
-  name: "Raul Lopez",
+  name: "Raúl López",
+  legalName: "Raúl López",
   domain: "imraullopez.com",
-  title: "Raul Lopez | Founder-Engineer Building AI Infrastructure",
-  description:
-    "Founder-engineer building open-source infrastructure for multi-agent orchestration, reusable AI workflows, and human-supervised autonomous systems.",
-  tagline: "Open-source infrastructure for agent systems that need structure, auditability, and technical credibility.",
+  email: "raul@imraullopez.com",
+  whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "",
   githubUrl: "https://github.com/r4ullopezdev",
+  linkedinUrl: "https://www.linkedin.com",
+  calendlyUrl: "https://calendly.com/raul-lopez/diagnostico-ia",
   primaryProjectUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
-  paypalUrl: "https://paypal.me/imraullopezpty",
+  title: "Raúl López | Arquitecto de soluciones IA y automatización para empresas",
+  description:
+    "Arquitecto de soluciones IA y automatización para empresas. Diseño agentes, automatizaciones y sistemas comerciales que reducen trabajo manual, aceleran seguimiento y mejoran operaciones.",
+  shortTagline:
+    "IA, automatización, funnels, seguimiento comercial y sistemas operativos para empresas que quieren ejecutar rápido.",
+  heroMessage:
+    "En una semana sustituyo entre un 30 % y un 60 % del trabajo administrativo repetitivo de tu empresa mediante agentes de IA.",
+  authorityLine:
+    "Fundador de NANOTEC / NANO, con más de 10.000 usuarios y apoyo de Microsoft for Startups.",
+  analytics: {
+    gaMeasurementId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+    metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",
+  },
 };
+
+export const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/sobre-mi", label: "Sobre mí" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+export const leadBudgetOptions = [
+  "Menos de $1.500",
+  "$1.500 - $3.000",
+  "$3.000 - $5.000",
+  "$5.000 - $10.000",
+  "$10.000+",
+];
+
+export const trustBadges = [
+  "Microsoft for Startups",
+  "10.000+ usuarios en NANOTEC / NANO",
+  "IA aplicada + automatización + funnels",
+  "Experiencia real operando negocios",
+];
+
+export const painPoints = [
+  "Leads que se enfrían porque nadie responde en minutos.",
+  "Equipos administrativos atrapados en tareas repetitivas, copiar y pegar y seguimiento manual.",
+  "Procesos internos dispersos entre WhatsApp, email, formularios, hojas de cálculo y CRM mal actualizado.",
+  "Operaciones que dependen demasiado de personas para tareas que ya deberían estar automatizadas.",
+  "Empresas que hablan de IA, pero siguen ejecutando con sistemas lentos y poco fiables.",
+  "Pérdida de tiempo directivo por falta de dashboards, alertas y flujos internos bien diseñados.",
+];
+
+export const outcomes = [
+  "Menos trabajo manual en operaciones, atención y seguimiento.",
+  "Respuesta más rápida a leads, clientes y solicitudes internas.",
+  "Sistemas que clasifican, agendan, notifican y actualizan datos sin fricción.",
+  "Más capacidad operativa sin aumentar estructura al mismo ritmo.",
+  "Automatizaciones conectadas a herramientas reales, no demos bonitas.",
+  "Visibilidad de procesos para detectar cuellos de botella y mejorar ejecución.",
+];
+
+export const coreServices = [
+  {
+    slug: "agentes-ia-empresas",
+    title: "Agentes IA para empresas",
+    problem:
+      "Tus equipos repiten decisiones, consultas, clasificación y seguimiento que ya pueden delegarse a sistemas entrenados.",
+    solution:
+      "Diseño agentes conectados a tus flujos, conocimiento y herramientas para ejecutar tareas concretas como empleados digitales.",
+    benefit:
+      "Menos carga operativa, más velocidad de respuesta y mejor consistencia en procesos críticos.",
+    examples: [
+      "Agentes que responden leads y filtran oportunidades.",
+      "Agentes internos para soporte operativo y consultas del equipo.",
+      "Agentes de seguimiento y recuperación comercial.",
+    ],
+  },
+  {
+    slug: "automatizacion-procesos",
+    title: "Automatización de procesos",
+    problem:
+      "Tus procesos dependen de pasos manuales, recordatorios humanos y herramientas desconectadas.",
+    solution:
+      "Construyo flujos que conectan formularios, CRM, correo, WhatsApp, dashboards, documentos y bases de datos.",
+    benefit:
+      "Menos errores, menos retrasos y más tiempo del equipo para vender, atender mejor y crecer.",
+    examples: [
+      "Reportes automáticos y alertas operativas.",
+      "Flujos de aprobación y documentación.",
+      "Sincronización entre CRM, formularios y bases de datos.",
+    ],
+  },
+  {
+    slug: "chatbots-asistentes",
+    title: "Chatbots y asistentes inteligentes",
+    problem:
+      "Responder siempre lo mismo consume tiempo y hace que clientes o pacientes esperen demasiado.",
+    solution:
+      "Creo asistentes de texto o voz que informan, califican, derivan y preparan el siguiente paso.",
+    benefit:
+      "Atención más rápida, menos carga humana y experiencia más consistente para el cliente.",
+    examples: [
+      "Chatbots para captación y soporte.",
+      "Asistentes con voz usando ElevenLabs.",
+      "Asistentes conectados a FAQs, documentos y sistemas internos.",
+    ],
+  },
+  {
+    slug: "automatizacion-comercial",
+    title: "Automatización comercial y seguimiento de leads",
+    problem:
+      "Pierdes ventas por no responder rápido, no dar seguimiento y no priorizar bien los leads.",
+    solution:
+      "Diseño sistemas que capturan, responden, califican, agendan, nutren y actualizan el pipeline automáticamente.",
+    benefit:
+      "Más reuniones, menos leads perdidos y un proceso comercial más rápido y medible.",
+    examples: [
+      "Respuesta inmediata por WhatsApp o email.",
+      "Secuencias de seguimiento automáticas.",
+      "Agendado y actualización de CRM sin trabajo manual.",
+    ],
+  },
+  {
+    slug: "integraciones-crm-whatsapp",
+    title: "Integraciones con CRM, WhatsApp, email, formularios y bases de datos",
+    problem:
+      "Tus herramientas están separadas y el equipo termina haciendo trabajo de integración a mano.",
+    solution:
+      "Conecto tus herramientas clave para que los datos fluyan y las acciones ocurran sin intervención constante.",
+    benefit:
+      "Un stack más ordenado, información más fiable y menos fricción entre áreas.",
+    examples: [
+      "CRM + WhatsApp + formularios + calendarios.",
+      "Email + dashboards + reportes + documentos.",
+      "n8n + APIs + sistemas propios o legacy.",
+    ],
+  },
+  {
+    slug: "web-landings-conversion",
+    title: "Desarrollo web y landings de conversión",
+    problem:
+      "Muchas webs informan, pero no convierten ni se integran con el proceso comercial.",
+    solution:
+      "Creo sitios y landings orientadas a captar demanda, filtrar leads y conectar el tráfico con tu sistema comercial.",
+    benefit:
+      "Más claridad en la propuesta, mejor conversión y mejor aprovechamiento de campañas.",
+    examples: [
+      "Landings para campañas pagadas.",
+      "Páginas de servicios con CTA claro.",
+      "Webs conectadas a formularios, CRM y automatizaciones.",
+    ],
+  },
+  {
+    slug: "consultoria-ia-empresas",
+    title: "Consultoría IA para empresas",
+    problem:
+      "Sabes que puedes automatizar, pero no tienes claro por dónde empezar ni qué dará ROI real.",
+    solution:
+      "Analizo el negocio, detecto cuellos de botella y priorizo una implementación de alto impacto en días, no en meses.",
+    benefit:
+      "Menos teoría, más foco en sistemas que reducen coste operativo y aceleran ingresos.",
+    examples: [
+      "Diagnóstico de operaciones repetitivas.",
+      "Roadmap de automatización por impacto.",
+      "Diseño de arquitectura y stack recomendado.",
+    ],
+  },
+];
+
+export const featuredProjects = [
+  {
+    title: "NANOTEC / NANO",
+    label: "Producto tecnológico propio",
+    summary:
+      "Ecosistema de tarjetas NFC y experiencias conectadas con más de 10.000 usuarios, desarrollado con enfoque real de producto, adquisición y operaciones.",
+    impact: [
+      "10.000+ usuarios",
+      "Apoyo de Microsoft for Startups",
+      "Validación de producto y ejecución real",
+    ],
+  },
+  {
+    title: "Sistemas IA para clientes",
+    label: "IA aplicada a negocio",
+    summary:
+      "Automatizaciones, agentes, chatbots y sistemas conectados a CRM, formularios, WhatsApp, dashboards y operaciones internas.",
+    impact: [
+      "Menos seguimiento manual",
+      "Respuesta más rápida a leads",
+      "Procesos con más trazabilidad",
+    ],
+  },
+  {
+    title: "Negocios propios y operaciones",
+    label: "Experiencia operando",
+    summary:
+      "Experiencia construyendo y gestionando negocios reales, incluyendo restaurantes y otros proyectos comerciales, con foco en ventas, marketing y ejecución operativa.",
+    impact: [
+      "Entendimiento real del negocio",
+      "Visión operativa, no solo técnica",
+      "Prioridad en ROI y velocidad",
+    ],
+  },
+];
+
+export const whyRaul = [
+  "No solo programo. Diseño sistemas que encajan con ventas, operaciones y atención al cliente.",
+  "He construido tecnología propia, vendido, operado y tomado decisiones con presión real de negocio.",
+  "Trabajo con herramientas modernas, pero el foco no es la herramienta: es el ahorro, la velocidad y el impacto.",
+  "Puedo convertir una oportunidad de IA en un sistema usable en días, no en una consultoría eterna.",
+];
+
+export const process7Days = [
+  {
+    day: "Día 1",
+    title: "Diagnóstico y mapa de cuellos de botella",
+    text: "Reviso procesos, leads, tiempos muertos, puntos de fuga y tareas repetitivas que deben salir de manos humanas.",
+  },
+  {
+    day: "Día 2",
+    title: "Diseño del sistema",
+    text: "Defino arquitectura, puntos de integración, reglas, stack y qué parte debe resolver IA y cuál automatización clásica.",
+  },
+  {
+    day: "Día 3",
+    title: "Conexión de herramientas",
+    text: "Conecto formularios, CRM, WhatsApp, email, calendarios, dashboards, documentos y APIs necesarias.",
+  },
+  {
+    day: "Día 4",
+    title: "Construcción del flujo",
+    text: "Monto agentes, lógica, seguimiento, clasificación, alertas y persistencia del proceso.",
+  },
+  {
+    day: "Día 5",
+    title: "Pruebas con casos reales",
+    text: "Pruebo respuestas, rutas, aprobaciones, datos y fallos para dejar el sistema operativo.",
+  },
+  {
+    day: "Día 6",
+    title: "Ajustes y optimización",
+    text: "Refino copy, reglas, prompts, tiempos y handoffs para que el sistema funcione mejor en producción.",
+  },
+  {
+    day: "Día 7",
+    title: "Entrega, entrenamiento y siguiente fase",
+    text: "Entrego el sistema, explico operación y dejo claro el siguiente sprint si quieres escalarlo.",
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Espacio para testimonio",
+    role: "Founder / Director comercial",
+    quote:
+      "Aquí irá un testimonio real centrado en ahorro de tiempo, mejora de seguimiento y velocidad de implementación.",
+  },
+  {
+    name: "Espacio para testimonio",
+    role: "Gerencia / Operaciones",
+    quote:
+      "Aquí irá un testimonio real sobre reducción de carga administrativa, claridad operativa y mejor coordinación.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "¿Con qué tipo de empresas trabajas?",
+    answer:
+      "Principalmente con empresas que ya venden, tienen equipo o volumen operativo, y quieren implementar sistemas reales para ahorrar tiempo o acelerar ventas.",
+  },
+  {
+    question: "¿Cuánto tarda una primera implementación?",
+    answer:
+      "La primera versión funcional puede estar en días. El objetivo es desplegar rápido, validar y luego iterar donde realmente haya retorno.",
+  },
+  {
+    question: "¿Qué presupuesto tiene sentido?",
+    answer:
+      "Trabajo en proyectos donde la empresa quiere una solución real y tiene capacidad de invertir entre 1.500 y 10.000 dólares o más según alcance.",
+  },
+  {
+    question: "¿Solo haces IA?",
+    answer:
+      "No. Construyo el sistema completo cuando hace falta: IA, automatización, integración, web, funnels, seguimiento y estructura de operación.",
+  },
+];
+
+export const contactFilters = [
+  "Trabajo con empresas que quieren implementar soluciones reales, no experimentos sin presupuesto.",
+  "Si buscas una prueba barata o solo una charla sobre IA, probablemente no soy la opción correcta.",
+  "Si quieres un sistema que reduzca trabajo manual y mejore operación o ventas, sí podemos hablar.",
+];

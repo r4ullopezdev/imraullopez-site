@@ -1,11 +1,7 @@
 import Link from "next/link";
+import { navItems, siteConfig } from "@/content/site";
+import { ButtonLink } from "./button-link";
 import { Container } from "./container";
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/projects/nano-agent-stack", label: "NANO Agent Stack" },
-];
 
 export function SiteHeader() {
   return (
@@ -16,8 +12,12 @@ export function SiteHeader() {
             RL
           </span>
           <div className="space-y-0.5">
-            <div className="text-sm font-semibold tracking-wide text-white">Raul Lopez</div>
-            <div className="text-xs text-slate-400">Founder-engineer / AI infrastructure</div>
+            <div className="text-sm font-semibold tracking-wide text-white">
+              {siteConfig.name}
+            </div>
+            <div className="text-xs text-slate-400">
+              Arquitecto de soluciones IA y automatización
+            </div>
           </div>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
@@ -26,14 +26,9 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://github.com/r4ullopezdev"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-white/12 bg-white/6 px-4 py-2 font-medium text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10"
-          >
-            GitHub
-          </a>
+          <ButtonLink href={siteConfig.calendlyUrl} external className="px-4 py-2">
+            Agendar diagnóstico IA
+          </ButtonLink>
         </nav>
       </Container>
     </header>

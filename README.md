@@ -1,91 +1,144 @@
 # imraullopez-site
 
-Main web portfolio for `imraullopez.com`.
+Web comercial de `imraullopez.com` para posicionar a **Raúl López** como arquitecto de soluciones IA y automatización para empresas.
 
-This project is a Next.js App Router site designed as the presentation layer for Raul Lopez's technical portfolio and open-source work. The current flagship page is a premium one-page presentation for **NANO Agent Stack**, supported by a broader home page and project index.
+La web está diseñada para captar leads cualificados interesados en:
+
+- agentes de IA para empresas
+- automatización de procesos
+- seguimiento comercial y captación de leads
+- integraciones con CRM, WhatsApp, email y bases de datos
+- desarrollo web y landings de conversión
+- consultoría IA orientada a ROI
 
 ## Stack
 
-- Next.js
+- Next.js App Router
 - TypeScript
 - Tailwind CSS
-- App Router
+- React 19
 
-## Routes
+## Arquitectura del sitio
 
-- `/` - main home page
-- `/projects` - project index
-- `/projects/nano-agent-stack` - flagship one-page project landing
+- `/` : Home principal orientada a captación
+- `/sobre-mi` : historia, autoridad y posicionamiento
+- `/servicios` : oferta de servicios
+- `/portfolio` : casos y experiencia operativa
+- `/contacto` : formulario principal de captación
+- `/lp/automatizacion-7-dias` : landing para automatización rápida
+- `/lp/seguimiento-leads` : landing para empresas de servicios y equipos comerciales
+- `/lp/automatizacion-interna` : landing para procesos internos
+- `/gracias` : confirmación tras envío
+- `/api/contact` : endpoint preparado para conectar CRM, email o automatización
 
-## Project structure
+Rutas heredadas:
+
+- `/projects` redirige a `/portfolio`
+- `/projects/nano-agent-stack` redirige a `/portfolio`
+
+## Estructura
 
 ```text
 src/
   app/
+    api/contact/route.ts
+    contacto/
+    gracias/
+    lp/
+    portfolio/
+    servicios/
+    sobre-mi/
+    layout.tsx
     page.tsx
-    projects/
-      page.tsx
-      nano-agent-stack/page.tsx
+    sitemap.ts
   components/
-    reusable UI building blocks
+    analytics.tsx
+    lead-form.tsx
+    service-card.tsx
+    case-study-card.tsx
+    cta-band.tsx
+    ...
   content/
-    editable project and site data
+    site.ts
   lib/
-    small helper utilities
+    metadata.ts
+    utils.ts
 ```
 
-## Run locally
+## Variables públicas
+
+Copia `.env.example` si vas a conectar analítica o WhatsApp:
+
+```bash
+NEXT_PUBLIC_GA_ID=
+NEXT_PUBLIC_META_PIXEL_ID=
+NEXT_PUBLIC_WHATSAPP_URL=
+```
+
+## Desarrollo local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000).
+## Validación
 
-## Edit points
+```bash
+npm run lint
+npm run build
+```
 
-- `src/content/site.ts` - personal metadata and primary links
-- `src/content/projects.ts` - project cards and ecosystem repo data
-- `src/app/page.tsx` - homepage structure and content
-- `src/app/projects/page.tsx` - project index
-- `src/app/projects/nano-agent-stack/page.tsx` - NANO landing page
-- `src/components/*` - reusable visual sections
+## Formularios
 
-## Prepared for future growth
+El formulario envía datos a `/api/contact`.
 
-The site is intentionally structured so it can expand into:
+Ahora mismo el endpoint:
 
-- `/about`
-- `/contact`
-- `/blog`
-- more project pages
-- future GitHub API integrations
+- valida campos requeridos
+- devuelve respuesta JSON
+- está listo para conectarse a CRM, email, webhook o automatización externa
 
-## Social sharing and metadata
+Integraciones recomendadas para siguiente paso:
 
-The site includes:
+- Resend o Postmark para email
+- HubSpot / GoHighLevel / Pipedrive / Close
+- n8n webhook para calificación y enrutamiento
 
-- root Open Graph image
-- project-specific Open Graph image for `/projects/nano-agent-stack`
-- `robots.ts`
-- `sitemap.ts`
+## SEO y tracking
 
-## Deploy
+El proyecto incluye:
 
-The project is ready for Vercel deployment.
+- metadata por página
+- Open Graph por ruta
+- `robots.txt`
+- `sitemap.xml`
+- estructura lista para Google Analytics
+- estructura lista para Meta Pixel
 
-Suggested path:
+## Despliegue en Vercel
 
-1. Import the repository into Vercel
-2. Connect the custom domain `imraullopez.com`
-3. Set the production domain in Vercel project settings
-4. Redeploy so metadata and OG image routes resolve under the final domain
+1. Importa el repo en Vercel.
+2. Añade las variables públicas si vas a usar tracking o WhatsApp.
+3. Verifica que el dominio principal sea `imraullopez.com`.
+4. Haz deploy.
 
-## Suggested next iteration
+## Conexión de dominio
 
-- add OG image generation
-- add a lightweight CMS or MDX layer for blog and case studies
-- connect GitHub API for dynamic repo stats
-- add page transitions and section-level motion refinements
-- add deployment config for Vercel or custom hosting
+En Vercel:
+
+1. Ve a `Settings -> Domains`.
+2. Añade `imraullopez.com`.
+3. Añade `www.imraullopez.com` si quieres redirigirlo.
+4. Configura los DNS que Vercel indique en tu proveedor.
+5. Marca `imraullopez.com` como dominio principal.
+6. Redeploy para refrescar metadata, sitemap y OG routes sobre el dominio final.
+
+## Próximos pasos recomendados para conversión
+
+- conectar el formulario a CRM y secuencia automática
+- instalar GA4 y Meta Pixel reales
+- añadir testimonios reales y resultados cuantificados
+- añadir casos con cifras y screenshots
+- grabar video corto de diagnóstico/oferta
+- crear campañas específicas por sector con UTMs
