@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Deep Tech — carbón + cian, oro para precio/valor */
-  --color-ink: #080b11; /* fondo de página */
-  --color-ink-2: #0a0e15;
-  --color-surface: #10151f; /* tarjetas */
-  --color-surface-2: #0c111a; /* tarjetas sutiles / inputs */
-  --color-line: #1e2836; /* bordes */
-  --color-line-soft: #161f2c;
-  --color-copy: #e9eef5; /* texto principal */
-  --color-muted: #96a3b6; /* texto secundario */
-  --color-faint: #6b7789; /* texto terciario */
-  --color-accent: #2dd4bf; /* cian/teal */
-  --color-accent-2: #22d3ee; /* cian brillante para glows */
-  --color-accent-ink: #04231f; /* texto sobre acento */
-  --color-gold: #e6c25a; /* precio / valor */
-  --color-gold-soft: #d9b24a;
+  /* Clean & Warm — blanco cálido, acento teal (tech), oro cálido para precio/valor */
+  --color-ink: #faf8f3; /* fondo de página (blanco cálido) */
+  --color-ink-2: #f3efe7;
+  --color-surface: #ffffff; /* tarjetas */
+  --color-surface-2: #f5f2ea; /* inputs / superficies sutiles */
+  --color-line: #e8e3d8; /* bordes cálidos */
+  --color-line-soft: #f1ece2;
+  --color-copy: #1b1712; /* texto principal (casi negro cálido) */
+  --color-muted: #6d665a; /* texto secundario */
+  --color-faint: #9a9284; /* texto terciario */
+  --color-accent: #0d9488; /* teal legible sobre blanco */
+  --color-accent-2: #14b8a6; /* teal brillante para gradientes/halos */
+  --color-accent-ink: #ffffff; /* texto sobre acento */
+  --color-gold: #b45309; /* ámbar cálido para precios */
+  --color-gold-soft: #c2751a;
 
   --font-sans: var(--font-heading);
   --font-mono: var(--font-mono);
@@ -42,63 +42,86 @@ a {
 }
 
 ::selection {
-  background: rgba(45, 212, 191, 0.24);
-  color: #fff;
+  background: rgba(13, 148, 136, 0.16);
 }
 
-/* Fondo con rejilla técnica sutil */
+/* Rejilla técnica muy sutil */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgba(27, 23, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 23, 18, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(75% 60% at 50% 0%, #000 30%, transparent 85%);
 }
 
-/* Halo de acento para héroes y CTAs */
+/* Halo cálido para héroes */
 .glow-accent {
   background: radial-gradient(
-    60% 60% at 50% 0%,
-    rgba(45, 212, 191, 0.16),
+    55% 55% at 50% 0%,
+    rgba(20, 184, 166, 0.12),
     transparent 70%
   );
 }
 
-.text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #c9d4e2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 .card-hover {
-  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 }
 .card-hover:hover {
-  transform: translateY(-3px);
-  border-color: rgba(45, 212, 191, 0.4);
+  transform: translateY(-4px);
+  border-color: rgba(13, 148, 136, 0.4);
+  box-shadow:
+    0 2px 6px rgba(24, 20, 15, 0.05),
+    0 26px 60px -30px rgba(13, 148, 136, 0.28);
+}
+
+/* ---------- Animaciones (ligeras, solo CSS) ---------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.26s; }
+
+/* Barras del Score que se llenan al cargar */
+.bar-fill {
+  transform-origin: left;
+  animation: grow-x 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Reveal al hacer scroll — sin JS, con degradación segura.
+   Los navegadores sin soporte muestran el contenido normal (visible). */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 24%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .bar-fill {
+    animation: none !important;
+  }
 }
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
-@keyframes pulse-orbit {
-  0%, 100% { transform: scale(1); opacity: 0.55; }
-  50% { transform: scale(1.08); opacity: 1; }
-}
-@keyframes shimmer {
-  0% { transform: translateX(-120%); }
-  100% { transform: translateX(120%); }
-}
-
 .float-slow { animation: float-slow 8s ease-in-out infinite; }
 .float-slower { animation: float-slow 12s ease-in-out infinite; }
-.pulse-orbit { animation: pulse-orbit 4.8s ease-in-out infinite; }
-
-.shimmer-line::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.22), transparent);
-  animation: shimmer 5s linear infinite;
-}

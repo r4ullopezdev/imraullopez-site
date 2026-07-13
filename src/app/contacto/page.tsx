@@ -26,17 +26,17 @@ export default function ContactPage() {
           <div className="space-y-4">
             {contactFilters.map((item) => (
               <GlassPanel key={item} className="p-6">
-                <p className="text-sm leading-7 text-slate-200">{item}</p>
+                <p className="text-sm leading-7 text-copy/85">{item}</p>
               </GlassPanel>
             ))}
             <GlassPanel className="p-6">
-              <p className="text-sm leading-7 text-slate-300">
+              <p className="text-sm leading-7 text-muted">
                 También puedes escribirme por email o agendar una llamada desde{" "}
                 <a
                   href={siteConfig.calendlyUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-semibold text-white underline decoration-cyan-300/40 underline-offset-4"
+                  className="font-semibold text-accent underline decoration-accent/40 underline-offset-4"
                 >
                   Calendly
                 </a>{" "}
@@ -47,7 +47,7 @@ export default function ContactPage() {
                       href={siteConfig.whatsappUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="font-semibold text-white underline decoration-cyan-300/40 underline-offset-4"
+                      className="font-semibold text-accent underline decoration-accent/40 underline-offset-4"
                     >
                       WhatsApp
                     </a>

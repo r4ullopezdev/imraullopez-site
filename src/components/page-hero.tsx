@@ -24,7 +24,7 @@ export function PageHero({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] glow-accent" />
       <Container>
         <div className="relative grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="space-y-7">
+          <div className="animate-fade-up space-y-7">
             <Badge>{eyebrow}</Badge>
             <div className="space-y-5">
               <h1 className="max-w-5xl text-balance text-4xl font-semibold tracking-tight text-copy sm:text-5xl lg:text-6xl lg:leading-[1.05]">

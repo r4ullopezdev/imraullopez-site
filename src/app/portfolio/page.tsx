@@ -68,8 +68,8 @@ export default function PortfolioPage() {
           <div className="grid gap-5 md:grid-cols-2">
             {additionalCases.map((item) => (
               <GlassPanel key={item.title} className="p-7">
-                <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-300">{item.text}</p>
+                <h3 className="text-2xl font-semibold text-copy">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted">{item.text}</p>
               </GlassPanel>
             ))}
           </div>

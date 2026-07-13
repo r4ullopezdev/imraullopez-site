@@ -12,7 +12,7 @@ export function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="max-w-3xl space-y-4">
+    <div className="reveal max-w-3xl space-y-4">
       <Badge>{eyebrow}</Badge>
       <div className="space-y-3">
         <h2 className="text-balance text-3xl font-semibold tracking-tight text-copy sm:text-4xl">

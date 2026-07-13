@@ -8,8 +8,8 @@ const categories = [
 
 export function ScoreVisual() {
   return (
-    <div className="relative rounded-[24px] border border-line bg-surface p-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.03),0_40px_90px_-45px_rgba(0,0,0,0.9)]">
-      <div className="pointer-events-none absolute -right-10 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl" />
+    <div className="animate-fade-up delay-2 relative rounded-[24px] border border-line bg-surface p-7 shadow-[0_1px_3px_rgba(24,20,15,0.05),0_30px_70px_-38px_rgba(24,20,15,0.22)]">
+      <div className="pointer-events-none absolute -right-10 -top-16 h-48 w-48 rounded-full bg-accent/12 blur-3xl" />
       <div className="relative space-y-6">
         <div className="flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
@@ -28,7 +28,7 @@ export function ScoreVisual() {
               </span>
               <span className="text-lg text-muted">/100</span>
             </div>
-            <span className="mt-2 inline-flex rounded-full border border-rose-400/30 bg-rose-400/10 px-2.5 py-1 text-[11px] font-semibold text-rose-300">
+            <span className="mt-2 inline-flex rounded-full border border-rose-200 bg-rose-50 px-2.5 py-1 text-[11px] font-semibold text-rose-600">
               Empresa Tradicional
             </span>
           </div>
@@ -46,7 +46,7 @@ export function ScoreVisual() {
         </div>
 
         <div className="space-y-3">
-          {categories.map((c) => (
+          {categories.map((c, i) => (
             <div key={c.label} className="space-y-1.5">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-muted">{c.label}</span>
@@ -54,8 +54,11 @@ export function ScoreVisual() {
               </div>
               <div className="h-2 w-full overflow-hidden rounded-full bg-surface-2">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-accent to-accent-2"
-                  style={{ width: `${c.value}%` }}
+                  className="bar-fill h-full rounded-full bg-gradient-to-r from-accent to-accent-2"
+                  style={{
+                    width: `${c.value}%`,
+                    animationDelay: `${0.15 + i * 0.1}s`,
+                  }}
                 />
               </div>
             </div>

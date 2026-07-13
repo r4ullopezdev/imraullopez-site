@@ -12,7 +12,7 @@ export function CtaBand({ title, text, primary, secondary }: CtaBandProps) {
   return (
     <section className="pt-24">
       <Container>
-        <div className="relative overflow-hidden rounded-[28px] border border-accent/25 bg-[linear-gradient(135deg,rgba(45,212,191,0.10),rgba(34,211,238,0.04)_45%,rgba(16,21,31,0.9))] p-8 sm:p-12">
+        <div className="reveal relative overflow-hidden rounded-[28px] border border-accent/25 bg-[linear-gradient(135deg,rgba(13,148,136,0.10),rgba(180,83,9,0.06)_58%,#ffffff)] p-8 shadow-[0_30px_80px_-50px_rgba(13,148,136,0.4)] sm:p-12">
           <div className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-4">

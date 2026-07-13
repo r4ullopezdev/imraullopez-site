@@ -25,17 +25,17 @@ export default function AboutPage() {
         secondaryCta={{ href: "/portfolio", label: "Ver portfolio" }}
         aside={
           <GlassPanel className="space-y-5 p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
               Autoridad
             </p>
-            <div className="space-y-4 text-sm leading-7 text-slate-300">
+            <div className="space-y-4 text-sm leading-7 text-muted">
               <p>
-                Fundé <span className="font-semibold text-white">NANOTEC / NANO</span>,
+                Fundé <span className="font-semibold text-copy">NANOTEC / NANO</span>,
                 un proyecto tecnológico con tarjetas NFC y más de 10.000 usuarios.
               </p>
               <p>
                 El proyecto recibió apoyo de{" "}
-                <span className="font-semibold text-white">Microsoft for Startups</span>.
+                <span className="font-semibold text-copy">Microsoft for Startups</span>.
               </p>
               <p>
                 También he construido soluciones IA, automatizaciones, webs,
@@ -55,23 +55,23 @@ export default function AboutPage() {
           />
           <div className="space-y-4">
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-white">NANOTEC / NANO</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
+              <h3 className="text-xl font-semibold text-copy">NANOTEC / NANO</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">
                 Construí un proyecto tecnológico orientado a adopción real,
                 experiencia conectada y ejecución comercial, no solo desarrollo
                 técnico aislado.
               </p>
             </GlassPanel>
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-white">Microsoft for Startups</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
+              <h3 className="text-xl font-semibold text-copy">Microsoft for Startups</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">
                 Haber recibido apoyo del programa refuerza credibilidad, pero lo
                 importante es que hubo producto, usuarios y capacidad real de ejecución.
               </p>
             </GlassPanel>
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-white">Negocios reales</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
+              <h3 className="text-xl font-semibold text-copy">Negocios reales</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">
                 He operado proyectos comerciales, incluyendo restaurantes y
                 otros negocios, y eso me dio criterio práctico sobre ventas,
                 procesos, tiempos muertos y operación diaria.

@@ -62,8 +62,8 @@ export default function RootLayout({
       <body className="min-h-full bg-ink text-copy">
         <AnalyticsScripts />
         <div className="relative min-h-screen overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-grid opacity-70" />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_15%_-5%,rgba(45,212,191,0.14),transparent_60%),radial-gradient(55%_45%_at_88%_-8%,rgba(34,211,238,0.10),transparent_55%),linear-gradient(180deg,#080b11,#0a0e15_60%,#080b11)]" />
+          <div className="pointer-events-none absolute inset-0 bg-grid" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_40%_at_12%_-5%,rgba(20,184,166,0.10),transparent_60%),radial-gradient(48%_38%_at_90%_-8%,rgba(180,83,9,0.07),transparent_58%),linear-gradient(180deg,#faf8f3,#f7f4ee_55%,#faf8f3)]" />
           <div className="relative z-10 flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>

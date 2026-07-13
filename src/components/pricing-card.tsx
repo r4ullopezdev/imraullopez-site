@@ -9,10 +9,10 @@ export function PricingCard({ offer }: { offer: Offer }) {
   return (
     <div
       className={cn(
-        "relative flex h-full flex-col rounded-[22px] border p-7",
+        "card-hover reveal relative flex h-full flex-col rounded-[22px] border p-7",
         highlight
-          ? "border-accent/50 bg-[linear-gradient(180deg,rgba(45,212,191,0.07),rgba(16,21,31,0.95))] shadow-[0_30px_90px_-40px_rgba(45,212,191,0.55)]"
-          : "border-line bg-surface",
+          ? "border-accent/40 bg-[linear-gradient(180deg,rgba(13,148,136,0.06),#ffffff)] shadow-[0_30px_70px_-40px_rgba(13,148,136,0.45)]"
+          : "border-line bg-surface shadow-[0_1px_3px_rgba(24,20,15,0.05),0_18px_44px_-26px_rgba(24,20,15,0.16)]",
       )}
     >
       {badge ? (
@@ -20,7 +20,7 @@ export function PricingCard({ offer }: { offer: Offer }) {
           className={cn(
             "absolute -top-3 left-7 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]",
             highlight
-              ? "bg-accent text-[color:var(--color-accent-ink)]"
+              ? "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_6px_20px_-6px_rgba(13,148,136,0.6)]"
               : "border border-line bg-surface-2 text-muted",
           )}
         >

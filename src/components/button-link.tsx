@@ -10,13 +10,13 @@ type ButtonLinkProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink";
+  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ink";
 
 const variants = {
   primary:
-    "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_10px_40px_-10px_rgba(45,212,191,0.6)] hover:bg-accent-2 hover:shadow-[0_14px_50px_-8px_rgba(45,212,191,0.7)]",
+    "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_8px_26px_-10px_rgba(13,148,136,0.5)] hover:bg-accent-2 hover:shadow-[0_12px_34px_-8px_rgba(13,148,136,0.55)]",
   secondary:
-    "border border-line bg-white/[0.02] text-copy hover:border-accent/50 hover:bg-white/[0.05]",
+    "border border-line bg-surface text-copy hover:border-accent/50 hover:bg-surface-2",
   ghost: "text-muted hover:text-copy",
 };
 

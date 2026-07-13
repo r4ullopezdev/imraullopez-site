@@ -23,13 +23,13 @@ export default async function ThankYouPage({
     <div className="pb-24 pt-24">
       <Container className="max-w-4xl">
         <GlassPanel className="space-y-6 p-10 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
             Solicitud recibida
           </p>
-          <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="text-balance text-4xl font-semibold tracking-tight text-copy sm:text-5xl">
             Gracias. Ya tengo el contexto inicial de {company}.
           </h1>
-          <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-slate-300">
+          <p className="mx-auto max-w-2xl text-pretty text-lg leading-8 text-muted">
             Revisaré tu solicitud con foco en impacto real. Si veo encaje,
             el siguiente paso será un diagnóstico donde priorizaremos el
             sistema con mejor retorno para implementar primero.

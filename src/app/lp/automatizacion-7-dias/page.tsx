@@ -65,8 +65,8 @@ export default function Automation7DaysPage() {
               ["Paso 3", "Implemento, pruebo y entrego una versión funcional."],
             ].map(([title, text]) => (
               <GlassPanel key={title} className="p-6">
-                <h3 className="text-xl font-semibold text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
+                <h3 className="text-xl font-semibold text-copy">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{text}</p>
               </GlassPanel>
             ))}
           </div>

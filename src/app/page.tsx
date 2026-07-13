@@ -80,7 +80,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] glow-accent" />
         <Container>
           <div className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="space-y-7">
+            <div className="animate-fade-up space-y-7">
               <Badge>Infraestructura digital · IA · Automatización · Agentes</Badge>
 
               <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-copy sm:text-5xl lg:text-6xl">
@@ -113,7 +113,7 @@ export default function HomePage() {
                 {trustBadges.map((badge) => (
                   <div
                     key={badge}
-                    className="rounded-full border border-line bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-copy/70"
+                    className="rounded-full border border-line bg-surface px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-muted"
                   >
                     {badge}
                   </div>
