@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/sobre-mi",
     "/servicios",
-    "/portfolio",
     "/contacto",
     "/gracias",
     "/lp/diagnostico-ia",

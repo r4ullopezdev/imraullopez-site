@@ -22,7 +22,7 @@ export default function AboutPage() {
         title="Infraestructura IA está dirigida por Raúl López."
         description="Analista de datos por Microsoft y speaker internacional de IA. No solo desarrollo: criterio de negocio, ejecución real y experiencia trabajando de la mano con bancos, gobiernos y grandes empresas."
         primaryCta={{ href: siteConfig.calendlyUrl, label: "Agendar diagnóstico IA", external: true }}
-        secondaryCta={{ href: "/portfolio", label: "Ver portfolio" }}
+        secondaryCta={{ href: "/servicios", label: "Ver servicios" }}
         aside={
           <GlassPanel className="space-y-5 p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
