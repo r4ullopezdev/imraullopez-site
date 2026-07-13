@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 type ContactPayload = {
   name?: string;
@@ -10,23 +11,65 @@ type ContactPayload = {
   source?: string;
 };
 
-export async function POST(request: Request) {
-  const body = (await request.json()) as ContactPayload;
+type Lead = ContactPayload & { receivedAt: string };
 
-  if (!body.name || !body.company || !body.email || !body.whatsapp || !body.budget || !body.problem) {
+// Envía un aviso de lead por SMTP. Solo se activa si hay credenciales SMTP.
+async function sendLeadEmail(lead: Lead): Promise<boolean> {
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_TO } = process.env;
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) return false;
+
+  const port = Number(SMTP_PORT || 465);
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port,
+    secure: port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+
+  const body = [
+    `Nombre: ${lead.name}`,
+    `Empresa: ${lead.company}`,
+    `Email: ${lead.email}`,
+    `WhatsApp: ${lead.whatsapp}`,
+    `Presupuesto: ${lead.budget}`,
+    `Origen: ${lead.source || "web"}`,
+    "",
+    "Qué quiere resolver:",
+    lead.problem || "",
+    "",
+    `Recibido: ${lead.receivedAt}`,
+  ].join("\n");
+
+  await transporter.sendMail({
+    from: `Infraestructura IA <${SMTP_USER}>`,
+    to: SMTP_TO || SMTP_USER,
+    replyTo: lead.email,
+    subject: `Nuevo lead: ${lead.company || "—"} (${lead.source || "web"})`,
+    text: body,
+  });
+  return true;
+}
+
+export async function POST(request: Request) {
+  const data = (await request.json()) as ContactPayload;
+
+  if (
+    !data.name ||
+    !data.company ||
+    !data.email ||
+    !data.whatsapp ||
+    !data.budget ||
+    !data.problem
+  ) {
     return NextResponse.json(
       { ok: false, error: "Missing required fields." },
       { status: 400 },
     );
   }
 
-  const lead = {
-    ...body,
-    receivedAt: new Date().toISOString(),
-  };
+  const lead: Lead = { ...data, receivedAt: new Date().toISOString() };
 
-  // Reenvío opcional a n8n / CRM. Solo se activa si CONTACT_WEBHOOK_URL está definida.
-  // Si falla o no está configurada, el lead igual se acepta (no bloquea al usuario).
+  // Reenvío opcional a n8n / CRM.
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
   let forwarded = false;
   if (webhookUrl) {
@@ -42,12 +85,19 @@ export async function POST(request: Request) {
     }
   }
 
+  // Aviso por email (no bloquea la respuesta al usuario si falla).
+  let emailed = false;
+  try {
+    emailed = await sendLeadEmail(lead);
+  } catch {
+    emailed = false;
+  }
+
   return NextResponse.json({
     ok: true,
     forwarded,
-    message: forwarded
-      ? "Lead recibido y enviado a la automatización configurada."
-      : "Lead recibido. Configura CONTACT_WEBHOOK_URL para enviarlo automáticamente a n8n, CRM o email.",
+    emailed,
+    message: "Lead recibido.",
     lead,
   });
 }

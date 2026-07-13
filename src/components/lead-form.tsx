@@ -162,7 +162,7 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-[color:var(--color-accent-ink)] shadow-[0_10px_40px_-10px_rgba(45,212,191,0.6)] transition hover:bg-accent-2 disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_-10px_rgba(45,212,191,0.6)] transition hover:bg-accent-2 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? "Enviando..." : "Solicitar diagnóstico"}
       </button>

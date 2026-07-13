@@ -20,7 +20,7 @@ export function PricingCard({ offer }: { offer: Offer }) {
           className={cn(
             "absolute -top-3 left-7 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]",
             highlight
-              ? "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_6px_20px_-6px_rgba(13,148,136,0.6)]"
+              ? "bg-accent text-white shadow-[0_6px_20px_-6px_rgba(13,148,136,0.6)]"
               : "border border-line bg-surface-2 text-muted",
           )}
         >

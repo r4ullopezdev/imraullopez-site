@@ -4,7 +4,7 @@ export const siteConfig = {
   brandMark: "IA",
   founderName: "Raúl López",
   domain: "infraestructuraia.com",
-  email: "raul@imraullopez.com",
+  email: "hola@infraestructuraia.com",
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "",
   githubUrl: "https://github.com/r4ullopezdev",
   linkedinUrl: "https://www.linkedin.com",

@@ -11,7 +11,6 @@ import { PricingCard } from "@/components/pricing-card";
 import { ProcessStep } from "@/components/process-step";
 import { ScoreVisual } from "@/components/score-visual";
 import { SectionHeading } from "@/components/section-heading";
-import { TestimonialCard } from "@/components/testimonial-card";
 import {
   faqs,
   featuredProjects,
@@ -19,7 +18,6 @@ import {
   outcomes,
   painPoints,
   siteConfig,
-  testimonials,
   trustBadges,
 } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
@@ -352,22 +350,6 @@ export default function HomePage() {
           <div className="grid gap-5 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <CaseStudyCard key={project.title} {...project} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="pt-24">
-        <Container className="space-y-10">
-          <SectionHeading
-            eyebrow="Prueba social"
-            title="La confianza se gana con implementación, criterio y resultados."
-            description="Espacio preparado para testimonios y casos medibles de ahorro de tiempo, mejor seguimiento y velocidad de entrega."
-          />
-          <div className="grid gap-5 lg:grid-cols-2">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.quote} {...testimonial} />
             ))}
           </div>
         </Container>

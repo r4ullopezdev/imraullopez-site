@@ -14,7 +14,7 @@ const base =
 
 const variants = {
   primary:
-    "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_8px_26px_-10px_rgba(13,148,136,0.5)] hover:bg-accent-2 hover:shadow-[0_12px_34px_-8px_rgba(13,148,136,0.55)]",
+    "bg-accent text-white shadow-[0_8px_26px_-10px_rgba(13,148,136,0.5)] hover:bg-accent-2 hover:shadow-[0_12px_34px_-8px_rgba(13,148,136,0.55)]",
   secondary:
     "border border-line bg-surface text-copy hover:border-accent/50 hover:bg-surface-2",
   ghost: "text-muted hover:text-copy",
