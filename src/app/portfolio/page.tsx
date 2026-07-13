@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { CaseStudyCard } from "@/components/case-study-card";
 import { GlassPanel } from "@/components/glass-panel";
-import { featuredProjects, siteConfig } from "@/content/site";
+import { siteConfig } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
@@ -12,6 +12,42 @@ export const metadata = buildMetadata(
   "Portfolio de Infraestructura IA: proyectos tecnológicos, automatizaciones empresariales, IA aplicada, funnels y experiencia real operando negocios.",
   "/portfolio",
 );
+
+const highlightCases = [
+  {
+    title: "Presencia y captación digital",
+    label: "Más leads, menos fugas",
+    summary:
+      "Webs, landings y funnels que hacen que la empresa aparezca cuando la buscan y conviertan visitas en oportunidades medibles.",
+    impact: [
+      "Aparecer cuando te buscan",
+      "Leads calificados, no ruido",
+      "Todo medible desde el primer clic",
+    ],
+  },
+  {
+    title: "Automatización de operaciones",
+    label: "Menos trabajo manual",
+    summary:
+      "Sistemas que mueven datos, disparan alertas, generan reportes y quitan de manos humanas las tareas repetitivas del día a día.",
+    impact: [
+      "Menos tareas repetitivas",
+      "Procesos con trazabilidad",
+      "El equipo enfocado en lo importante",
+    ],
+  },
+  {
+    title: "IA aplicada a ventas",
+    label: "Seguimiento que no se pierde",
+    summary:
+      "Agentes y automatizaciones conectados a CRM, WhatsApp y correo que responden, califican y dan seguimiento sin que nadie lo olvide.",
+    impact: [
+      "Respuesta inmediata a cada lead",
+      "Seguimiento automático",
+      "CRM siempre actualizado",
+    ],
+  },
+];
 
 const additionalCases = [
   {
@@ -51,8 +87,8 @@ export default function PortfolioPage() {
             description="Este mix me posiciona más cerca de un arquitecto de soluciones de negocio que de un freelancer técnico tradicional."
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <CaseStudyCard key={project.title} {...project} />
+            {highlightCases.map((item) => (
+              <CaseStudyCard key={item.title} {...item} />
             ))}
           </div>
         </Container>

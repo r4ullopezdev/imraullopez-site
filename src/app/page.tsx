@@ -13,7 +13,7 @@ import { ScoreVisual } from "@/components/score-visual";
 import { SectionHeading } from "@/components/section-heading";
 import {
   faqs,
-  featuredProjects,
+  founderCredentials,
   offerLadder,
   outcomes,
   painPoints,
@@ -132,9 +132,9 @@ export default function HomePage() {
       <section className="pt-24">
         <Container className="grid gap-4 md:grid-cols-3">
           <MetricCard
-            value="10.000+"
-            label="Usuarios en NANOTEC / NANO"
-            description="Producto propio validado, con apoyo de Microsoft for Startups."
+            value="+$140k"
+            label="Respaldo de Microsoft"
+            description="Su fundador es analista de datos por Microsoft y su empresa fue patrocinada con más de $140.000."
           />
           <MetricCard
             value="7–10 días"
@@ -339,17 +339,17 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* AUTHORITY / PROOF */}
+      {/* DIRECCIÓN / RAÚL LÓPEZ */}
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
-            eyebrow="Autoridad"
-            title="Detrás de Infraestructura IA hay producto, ventas y operación real."
-            description="No solo desarrollo. Experiencia construyendo tecnología propia, vendiendo y operando negocios."
+            eyebrow="Dirección"
+            title="Infraestructura IA está dirigida por Raúl López."
+            description="Analista de datos por Microsoft, speaker internacional de IA y fundador respaldado por Microsoft. No solo desarrollo: criterio de negocio, ejecución real y experiencia con bancos, gobiernos y grandes empresas."
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <CaseStudyCard key={project.title} {...project} />
+            {founderCredentials.map((cred) => (
+              <CaseStudyCard key={cred.title} {...cred} />
             ))}
           </div>
         </Container>

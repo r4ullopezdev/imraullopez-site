@@ -5,12 +5,12 @@ import { GlassPanel } from "@/components/glass-panel";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { Container } from "@/components/container";
-import { featuredProjects, siteConfig, whyRaul } from "@/content/site";
+import { founderCredentials, siteConfig, whyRaul } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
-  "Sobre Infraestructura IA | Fundada por Raúl López, arquitecto de soluciones IA",
-  "Infraestructura IA está fundada por Raúl López: fundador de NANOTEC / NANO, apoyo de Microsoft for Startups y experiencia real construyendo sistemas, negocios y automatizaciones.",
+  "Dirección | Infraestructura IA está dirigida por Raúl López",
+  "Infraestructura IA está dirigida por Raúl López: analista de datos por Microsoft, speaker internacional de IA, respaldado por Microsoft con más de $140.000, con experiencia junto a bancos, gobiernos y grandes empresas.",
   "/sobre-mi",
 );
 
@@ -18,63 +18,69 @@ export default function AboutPage() {
   return (
     <div className="pb-24">
       <PageHero
-        eyebrow="Sobre mí"
-        title="De fundador tecnológico a arquitecto de soluciones IA para empresas."
-        description="He construido producto, ventas, operaciones y tecnología. Esa mezcla me permite diseñar sistemas IA y automatizaciones con criterio de negocio, no solo con criterio técnico."
+        eyebrow="Dirección"
+        title="Infraestructura IA está dirigida por Raúl López."
+        description="Analista de datos por Microsoft y speaker internacional de IA. No solo desarrollo: criterio de negocio, ejecución real y experiencia trabajando de la mano con bancos, gobiernos y grandes empresas."
         primaryCta={{ href: siteConfig.calendlyUrl, label: "Agendar diagnóstico IA", external: true }}
         secondaryCta={{ href: "/portfolio", label: "Ver portfolio" }}
         aside={
           <GlassPanel className="space-y-5 p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              Autoridad
+              Quién dirige
             </p>
             <div className="space-y-4 text-sm leading-7 text-muted">
               <p>
-                Fundé <span className="font-semibold text-copy">NANOTEC / NANO</span>,
-                un proyecto tecnológico con tarjetas NFC y más de 10.000 usuarios.
+                <span className="font-semibold text-copy">Analista de datos por Microsoft.</span>{" "}
+                Su empresa fue patrocinada por Microsoft con más de{" "}
+                <span className="font-semibold text-copy">$140.000</span>.
               </p>
               <p>
-                El proyecto recibió apoyo de{" "}
-                <span className="font-semibold text-copy">Microsoft for Startups</span>.
+                <span className="font-semibold text-copy">Speaker internacional de IA:</span>{" "}
+                conferencias en universidades de Panamá y ponente en el Congreso de
+                Turismo de Venezuela (Hotel Meliá, Caracas).
               </p>
               <p>
-                También he construido soluciones IA, automatizaciones, webs,
-                funnels e integraciones para clientes y negocios propios.
+                Fundador de <span className="font-semibold text-copy">NANO</span> y
+                con experiencia trabajando junto a bancos y gobiernos.
               </p>
             </div>
           </GlassPanel>
         }
       />
 
+      {/* VIDEO DE RAÚL — pegar aquí el embed cuando esté listo (formato vertical 9:16 para Reels/Historias). */}
+
       <section className="pt-24">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionHeading
-            eyebrow="Mi historia"
-            title="No vengo solo del desarrollo. Vengo de construir, vender y operar."
-            description="He trabajado en producto, automatización, adquisición, atención, operaciones y tecnología. Por eso cuando veo un proceso, pienso en margen, tiempo, fricción, conversión y escalabilidad."
+            eyebrow="Trayectoria"
+            title="No vengo solo del desarrollo. Vengo de construir, formar y ejecutar."
+            description="Tecnología aplicada con entendimiento real de negocio: por eso Infraestructura IA piensa cada proyecto como un sistema comercial, no como una pieza técnica aislada."
           />
           <div className="space-y-4">
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-copy">NANOTEC / NANO</h3>
+              <h3 className="text-xl font-semibold text-copy">Microsoft: datos y respaldo</h3>
               <p className="mt-3 text-sm leading-7 text-muted">
-                Construí un proyecto tecnológico orientado a adopción real,
-                experiencia conectada y ejecución comercial, no solo desarrollo
-                técnico aislado.
+                Analista de datos certificado por Microsoft. Su empresa fue
+                seleccionada y patrocinada por Microsoft con más de $140.000, una
+                validación real de la tecnología detrás del proyecto.
               </p>
             </GlassPanel>
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-copy">Microsoft for Startups</h3>
+              <h3 className="text-xl font-semibold text-copy">Speaker internacional de IA</h3>
               <p className="mt-3 text-sm leading-7 text-muted">
-                Haber recibido apoyo del programa refuerza credibilidad, pero lo
-                importante es que hubo producto, usuarios y capacidad real de ejecución.
+                Ha dado conferencias de inteligencia artificial en universidades de
+                Panamá, cursos 1 a 1 de IA a grandes empresarios y fue ponente sobre
+                tecnología aplicada al turismo en el Congreso de Turismo de Venezuela,
+                en el Hotel Meliá de Caracas.
               </p>
             </GlassPanel>
             <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-copy">Negocios reales</h3>
+              <h3 className="text-xl font-semibold text-copy">Fundador de NANO · bancos y gobiernos</h3>
               <p className="mt-3 text-sm leading-7 text-muted">
-                He operado proyectos comerciales, incluyendo restaurantes y
-                otros negocios, y eso me dio criterio práctico sobre ventas,
-                procesos, tiempos muertos y operación diaria.
+                Fundador de NANO, tecnología propia con miles de usuarios. Ha
+                trabajado de la mano con bancos y gobiernos, con foco en ventas,
+                procesos y operación real.
               </p>
             </GlassPanel>
           </div>
@@ -84,9 +90,9 @@ export default function AboutPage() {
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
-            eyebrow="Cómo trabajo"
-            title="Mentalidad de ejecución rápida, criterio de negocio y profundidad técnica."
-            description="Ese es el cruce que más me interesa ocupar: construir sistemas útiles para empresas que quieren implementar ya."
+            eyebrow="Cómo trabaja"
+            title="Ejecución rápida, criterio de negocio y profundidad técnica."
+            description="Ese es el cruce que define a Infraestructura IA: construir sistemas útiles para empresas que quieren implementar ya."
           />
           <BulletGrid items={whyRaul} columns="md:grid-cols-2" />
         </Container>
@@ -95,21 +101,21 @@ export default function AboutPage() {
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
-            eyebrow="Señales de experiencia"
-            title="Mi propuesta se apoya en producto, IA, automatización y experiencia operativa."
-            description="No necesito inflar el relato. Prefiero mostrar una combinación poco común: tecnología aplicada con entendimiento real de negocio."
+            eyebrow="Credenciales"
+            title="Autoridad respaldada por Microsoft, escenarios internacionales y ejecución real."
+            description="Una combinación poco común: tecnología validada, divulgación internacional y experiencia operando con bancos, gobiernos y grandes empresas."
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <CaseStudyCard key={project.title} {...project} />
+            {founderCredentials.map((cred) => (
+              <CaseStudyCard key={cred.title} {...cred} />
             ))}
           </div>
         </Container>
       </section>
 
       <CtaBand
-        title="Si quieres a alguien que entienda tanto la tecnología como la operación, podemos hablar."
-        text="Trabajo mejor con founders, directores y empresas que quieren pasar rápido de idea a implementación útil."
+        title="Si quieres a alguien que entienda tanto la tecnología como la operación, hablemos."
+        text="Infraestructura IA trabaja mejor con founders, directores y empresas que quieren pasar rápido de idea a implementación útil."
         primary={{ href: siteConfig.calendlyUrl, label: "Agendar diagnóstico IA", external: true }}
       />
     </div>

@@ -19,7 +19,7 @@ export const siteConfig = {
   heroMessage:
     "La infraestructura digital que tu empresa necesita para operar y crecer con IA.",
   authorityLine:
-    "Fundada por Raúl López (NANOTEC / NANO, 10.000+ usuarios y apoyo de Microsoft for Startups).",
+    "Dirigida por Raúl López — analista de datos por Microsoft, speaker internacional de IA y fundador respaldado por Microsoft.",
   analytics: {
     gaMeasurementId: process.env.NEXT_PUBLIC_GA_ID ?? "",
     metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",
@@ -43,10 +43,10 @@ export const leadBudgetOptions = [
 ];
 
 export const trustBadges = [
-  "Microsoft for Startups",
-  "10.000+ usuarios en NANOTEC / NANO",
+  "Respaldada por Microsoft (+$140k)",
+  "Dirigida por un speaker internacional de IA",
+  "Experiencia con bancos y gobiernos",
   "IA aplicada + automatización + funnels",
-  "Experiencia real operando negocios",
 ];
 
 export const painPoints = [
@@ -175,38 +175,38 @@ export const coreServices = [
   },
 ];
 
-export const featuredProjects = [
+export const founderCredentials = [
   {
-    title: "NANOTEC / NANO",
-    label: "Producto tecnológico propio",
+    title: "Analista de datos por Microsoft",
+    label: "Respaldo tecnológico",
     summary:
-      "Ecosistema de tarjetas NFC y experiencias conectadas con más de 10.000 usuarios, desarrollado con enfoque real de producto, adquisición y operaciones.",
+      "Analista de datos certificado por Microsoft. Su empresa fue seleccionada y patrocinada por Microsoft con más de $140.000 en respaldo.",
     impact: [
-      "10.000+ usuarios",
-      "Apoyo de Microsoft for Startups",
-      "Validación de producto y ejecución real",
+      "+$140.000 de patrocinio de Microsoft",
+      "Analista de datos certificado",
+      "Tecnología validada, no teoría",
     ],
   },
   {
-    title: "Sistemas IA para clientes",
-    label: "IA aplicada a negocio",
+    title: "Speaker internacional de IA",
+    label: "Autoridad y divulgación",
     summary:
-      "Automatizaciones, agentes, chatbots y sistemas conectados a CRM, formularios, WhatsApp, dashboards y operaciones internas.",
+      "Conferencista de inteligencia artificial en universidades de Panamá y ponente sobre tecnología aplicada al turismo en el Congreso de Turismo de Venezuela (Hotel Meliá, Caracas).",
     impact: [
-      "Menos seguimiento manual",
-      "Respuesta más rápida a leads",
-      "Procesos con más trazabilidad",
+      "Conferencias de IA en universidades de Panamá",
+      "Ponente en el Congreso de Turismo de Venezuela",
+      "Cursos 1 a 1 de IA a grandes empresarios",
     ],
   },
   {
-    title: "Negocios propios y operaciones",
-    label: "Experiencia operando",
+    title: "Fundador y ejecutor real",
+    label: "Producto y experiencia",
     summary:
-      "Experiencia construyendo y gestionando negocios reales, incluyendo restaurantes y otros proyectos comerciales, con foco en ventas, marketing y ejecución operativa.",
+      "Fundador de NANO, tecnología propia con miles de usuarios. Ha trabajado de la mano con bancos y gobiernos, con foco en ejecución, ventas y operación real.",
     impact: [
-      "Entendimiento real del negocio",
-      "Visión operativa, no solo técnica",
-      "Prioridad en ROI y velocidad",
+      "Fundador de NANO (producto propio)",
+      "Experiencia con bancos y gobiernos",
+      "Criterio de negocio, no solo técnico",
     ],
   },
 ];
