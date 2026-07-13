@@ -8,7 +8,7 @@ export const siteConfig = {
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "",
   githubUrl: "https://github.com/r4ullopezdev",
   linkedinUrl: "https://www.linkedin.com",
-  calendlyUrl: "https://calendly.com/raul-lopez/diagnostico-ia",
+  calendlyUrl: "https://calendly.com/imraullopez/diagnostico-personalizado-ia",
   primaryProjectUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
   title:
     "Infraestructura IA™ | Infraestructura digital con IA, automatización y agentes para empresas",
@@ -340,7 +340,7 @@ export const offerLadder: Offer[] = [
       "Lista para automatizaciones, CRM y agentes de IA",
     ],
     cta: {
-      href: "https://calendly.com/raul-lopez/diagnostico-ia",
+      href: "https://calendly.com/imraullopez/diagnostico-personalizado-ia",
       label: "Agendar diagnóstico",
       external: true,
     },
