@@ -22,8 +22,8 @@ import {
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
-  "Raul Lopez | IA y automatizacion para empresas que quieren ejecutar mejor",
-  "Diseno agentes de IA, automatizaciones, funnels y sistemas operativos para empresas que quieren ahorrar tiempo, responder mas rapido y crecer con mejores procesos.",
+  "Infraestructura IA | IA, automatizacion y agentes para empresas que quieren crecer",
+  "Construimos la infraestructura digital que tu empresa necesita: agentes de IA, automatizaciones, funnels y sistemas comerciales. Empezamos midiendo tu madurez con el AI Infrastructure Score.",
   "/",
 );
 
@@ -47,27 +47,26 @@ export default function HomePage() {
           <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
             <div className="space-y-8">
               <div className="inline-flex rounded-full border border-[#cde4ea] bg-[#e8f7f7] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#28606d]">
-                Arquitecto de soluciones IA / automatizacion / sistemas comerciales
+                Infraestructura digital · IA · automatizacion · agentes
               </div>
 
               <div className="space-y-5">
                 <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-tight text-[#102033] sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
-                  Implemento sistemas de IA y automatizacion para empresas que
-                  quieren vender mas y operar mejor.
+                  Construimos la infraestructura digital que tu empresa necesita
+                  para operar y crecer con IA.
                 </h1>
 
                 <p className="max-w-3xl text-pretty text-xl leading-9 text-[#495668]">
-                  En una semana puedo sustituir entre un 30 % y un 60 % del
-                  trabajo administrativo repetitivo de tu empresa mediante
-                  agentes de IA, automatizaciones e integraciones conectadas a
-                  tu operacion real.
+                  En dias implementamos agentes de IA, automatizaciones e
+                  integraciones que sustituyen entre un 30 % y un 60 % del
+                  trabajo administrativo repetitivo y conectan tu operacion real.
                 </p>
 
                 <p className="max-w-3xl text-base leading-8 text-[#5a6472]">
-                  No vendo tecnologia por moda. Diseno sistemas para responder
-                  leads mas rapido, reducir tareas manuales, bajar errores y
-                  darle a tu equipo mas tiempo para ventas, atencion y
-                  crecimiento.
+                  No vendemos tecnologia por moda. Empezamos midiendo tu madurez
+                  digital con el AI Infrastructure Score™ y construimos los
+                  cimientos para responder leads mas rapido, reducir tareas
+                  manuales y darle a tu equipo mas tiempo para vender y crecer.
                 </p>
               </div>
 
@@ -129,6 +128,71 @@ export default function HomePage() {
             label="Rango de proyecto"
             description="Trabajo con empresas que quieren implementacion real, no presentaciones vacias."
           />
+        </Container>
+      </section>
+
+      <section className="pt-24">
+        <Container>
+          <div className="rounded-[32px] border border-[#cde4ea] bg-gradient-to-br from-[#eef7f9] to-[#f7f3ec] p-8 sm:p-12">
+            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="space-y-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#28606d]">
+                  Empieza aqui
+                </p>
+                <h2 className="text-3xl font-semibold tracking-tight text-[#102033] sm:text-4xl">
+                  Diagnostico Estrategico IA™: mide tu empresa sobre 100 puntos.
+                </h2>
+                <p className="text-base leading-8 text-[#4a5768]">
+                  En 45 minutos evaluamos tu presencia digital, captacion,
+                  seguimiento, automatizacion y uso de IA con el AI
+                  Infrastructure Score™. Recibes un informe profesional, tu
+                  puntuacion y un roadmap priorizado. $149 (normal $300) y se
+                  descuenta integramente si avanzas con un proyecto.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <ButtonLink href="/lp/diagnostico-ia">
+                    Ver el diagnostico
+                  </ButtonLink>
+                  <ButtonLink
+                    href={siteConfig.calendlyUrl}
+                    external
+                    variant="secondary"
+                  >
+                    Agendar ahora
+                  </ButtonLink>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  [
+                    "10 categorias",
+                    "Presencia, captacion, seguimiento, IA, datos, procesos y mas.",
+                  ],
+                  [
+                    "Score 0-100",
+                    "Un numero claro y una banda de madurez digital.",
+                  ],
+                  [
+                    "Informe + roadmap",
+                    "Prioridades Ahora / Proximo / Despues.",
+                  ],
+                  [
+                    "Credito de $149",
+                    "Se descuenta si contratas un proyecto.",
+                  ],
+                ].map(([title, text]) => (
+                  <GlassPanel key={title} className="p-5">
+                    <p className="text-base font-semibold text-[#102033]">
+                      {title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-[#5a6472]">
+                      {text}
+                    </p>
+                  </GlassPanel>
+                ))}
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

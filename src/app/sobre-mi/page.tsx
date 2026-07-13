@@ -9,8 +9,8 @@ import { featuredProjects, siteConfig, whyRaul } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
-  "Sobre Raúl López | Fundador tecnológico y arquitecto de soluciones IA",
-  "Conoce la trayectoria de Raúl López: fundador de NANOTEC / NANO, apoyo de Microsoft for Startups y experiencia real construyendo sistemas, negocios y automatizaciones.",
+  "Sobre Infraestructura IA | Fundada por Raúl López, arquitecto de soluciones IA",
+  "Infraestructura IA está fundada por Raúl López: fundador de NANOTEC / NANO, apoyo de Microsoft for Startups y experiencia real construyendo sistemas, negocios y automatizaciones.",
   "/sobre-mi",
 );
 

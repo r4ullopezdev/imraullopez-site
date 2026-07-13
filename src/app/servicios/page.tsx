@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
   "Servicios | IA, automatización, agentes, funnels y sistemas para empresas",
-  "Servicios de Raúl López: agentes IA, automatización de procesos, seguimiento comercial, integraciones, chatbots, desarrollo web y consultoría IA para empresas.",
+  "Servicios de Infraestructura IA: agentes IA, automatización de procesos, seguimiento comercial, integraciones, chatbots, desarrollo web y consultoría IA para empresas.",
   "/servicios",
 );
 

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/portfolio",
     "/contacto",
     "/gracias",
+    "/lp/diagnostico-ia",
     "/lp/automatizacion-7-dias",
     "/lp/seguimiento-leads",
     "/lp/automatizacion-interna",

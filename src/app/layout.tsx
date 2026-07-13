@@ -22,12 +22,15 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(`https://${siteConfig.domain}`),
   keywords: [
+    "Infraestructura IA",
+    "AI Infrastructure Score",
+    "diagnostico estrategico IA",
     "IA para empresas",
     "automatizacion empresarial",
     "agentes de IA",
     "funnels",
-    "desarrollo web",
     "automatizacion comercial",
+    "transformacion digital Panama",
   ],
   openGraph: {
     title: siteConfig.title,

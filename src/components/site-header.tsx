@@ -8,15 +8,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#e6ddd1] bg-[rgba(250,247,241,0.84)] backdrop-blur-xl">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-[#c7d3e0] bg-white text-sm font-semibold tracking-[0.24em] text-[#102c46]">
-            RL
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-[#c7d3e0] bg-white text-sm font-semibold tracking-[0.18em] text-[#102c46]">
+            {siteConfig.brandMark}
           </span>
           <div className="space-y-0.5">
             <div className="text-sm font-semibold tracking-wide text-[#102033]">
               {siteConfig.name}
             </div>
             <div className="text-xs text-[#5a6472]">
-              IA, automatizacion y sistemas comerciales
+              Infraestructura digital con IA para empresas
             </div>
           </div>
         </Link>

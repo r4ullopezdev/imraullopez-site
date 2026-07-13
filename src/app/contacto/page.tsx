@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
   "Contacto | Agenda un diagnóstico IA para tu empresa",
-  "Contacto con Raúl López para proyectos de IA, automatización, seguimiento comercial y mejora operativa. Formulario orientado a clientes que quieren implementar soluciones reales.",
+  "Contacta con Infraestructura IA para proyectos de IA, automatización, seguimiento comercial y transformación operativa. Formulario orientado a empresas que quieren implementar soluciones reales.",
   "/contacto",
 );
 

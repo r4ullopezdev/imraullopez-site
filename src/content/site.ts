@@ -1,22 +1,25 @@
 export const siteConfig = {
-  name: "Raúl López",
-  legalName: "Raúl López",
-  domain: "imraullopez.com",
+  name: "Infraestructura IA",
+  legalName: "Infraestructura IA™",
+  brandMark: "IA",
+  founderName: "Raúl López",
+  domain: "infraestructuraia.com",
   email: "raul@imraullopez.com",
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "",
   githubUrl: "https://github.com/r4ullopezdev",
   linkedinUrl: "https://www.linkedin.com",
   calendlyUrl: "https://calendly.com/raul-lopez/diagnostico-ia",
   primaryProjectUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
-  title: "Raúl López | Arquitecto de soluciones IA y automatización para empresas",
+  title:
+    "Infraestructura IA™ | Infraestructura digital con IA, automatización y agentes para empresas",
   description:
-    "Arquitecto de soluciones IA y automatización para empresas. Diseño agentes, automatizaciones y sistemas comerciales que reducen trabajo manual, aceleran seguimiento y mejoran operaciones.",
+    "Infraestructura IA construye la infraestructura digital —IA, automatización y agentes inteligentes— que las empresas necesitan para operar como organizaciones modernas. Empezamos midiéndola con el AI Infrastructure Score™.",
   shortTagline:
-    "IA, automatización, funnels, seguimiento comercial y sistemas operativos para empresas que quieren ejecutar rápido.",
+    "Infraestructura digital con IA, automatización, agentes, funnels y sistemas comerciales para empresas que quieren crecer.",
   heroMessage:
-    "En una semana sustituyo entre un 30 % y un 60 % del trabajo administrativo repetitivo de tu empresa mediante agentes de IA.",
+    "La infraestructura digital que tu empresa necesita para operar y crecer con IA.",
   authorityLine:
-    "Fundador de NANOTEC / NANO, con más de 10.000 usuarios y apoyo de Microsoft for Startups.",
+    "Fundada por Raúl López (NANOTEC / NANO, 10.000+ usuarios y apoyo de Microsoft for Startups).",
   analytics: {
     gaMeasurementId: process.env.NEXT_PUBLIC_GA_ID ?? "",
     metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",

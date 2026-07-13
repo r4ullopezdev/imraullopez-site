@@ -6,7 +6,7 @@ import { siteConfig } from "@/content/site";
 
 export const metadata = buildMetadata(
   "Gracias | He recibido tu solicitud",
-  "Página de confirmación tras enviar una solicitud de diagnóstico IA con Raúl López.",
+  "Página de confirmación tras enviar una solicitud de Diagnóstico Estratégico IA con Infraestructura IA.",
   "/gracias",
 );
 

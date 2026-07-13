@@ -42,15 +42,16 @@ export default function Image() {
               borderRadius: 24,
               border: "1px solid rgba(34,211,238,0.28)",
               background: "rgba(34,211,238,0.12)",
-              fontSize: 28,
+              fontSize: 26,
               fontWeight: 700,
+              letterSpacing: "0.04em",
             }}
           >
-            RL
+            {siteConfig.brandMark}
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 22, opacity: 0.8 }}>imraullopez.com</span>
-            <span style={{ fontSize: 16, opacity: 0.55 }}>IA, automatización y sistemas comerciales</span>
+            <span style={{ fontSize: 22, opacity: 0.8 }}>{siteConfig.domain}</span>
+            <span style={{ fontSize: 16, opacity: 0.55 }}>Infraestructura digital con IA para empresas</span>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 900 }}>
@@ -68,14 +69,14 @@ export default function Image() {
               color: "rgba(241,233,216,0.92)",
             }}
           >
-            Arquitecto de soluciones IA
+            Infraestructura IA para empresas
           </div>
           <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.03 }}>
             {siteConfig.heroMessage}
           </div>
           <div style={{ fontSize: 26, lineHeight: 1.45, color: "rgba(226,232,240,0.82)", maxWidth: 900 }}>
-            Diseño agentes, automatizaciones, funnels y sistemas que ahorran
-            tiempo, reducen trabajo manual y aceleran operaciones comerciales.
+            Diagnóstico Estratégico IA™, AI Infrastructure Score™ y sistemas de
+            IA, automatización y agentes conectados a tu operación real.
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
   "Portfolio | Casos de negocio, IA aplicada y ejecución operativa",
-  "Portfolio de Raúl López con proyectos tecnológicos, automatizaciones empresariales, IA aplicada, funnels y experiencia operativa en negocios reales.",
+  "Portfolio de Infraestructura IA: proyectos tecnológicos, automatizaciones empresariales, IA aplicada, funnels y experiencia real operando negocios.",
   "/portfolio",
 );
 
