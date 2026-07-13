@@ -89,7 +89,20 @@ export default function DiagnosticoIAPage() {
         aside={<ScoreVisual />}
       />
 
-      <section className="pt-20">
+      <section className="pt-10">
+        <Container>
+          <div className="reveal flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-line bg-surface px-6 py-4 text-center text-sm text-muted">
+            <span>✓ Se descuenta íntegramente si avanzas</span>
+            <span>✓ Informe profesional en 24 h</span>
+            <span>✓ Sin compromiso</span>
+            <span className="font-semibold text-gold">
+              Cupos de Cliente Fundador limitados este mes
+            </span>
+          </div>
+        </Container>
+      </section>
+
+      <section className="pt-16">
         <Container className="grid gap-4 md:grid-cols-3">
           <MetricCard
             value="$149"

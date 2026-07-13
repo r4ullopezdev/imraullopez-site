@@ -96,18 +96,22 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                <ButtonLink href={siteConfig.calendlyUrl} external>
-                  Agendar diagnóstico
+                <ButtonLink
+                  href={siteConfig.calendlyUrl}
+                  external
+                  className="px-7 py-4 text-base"
+                >
+                  Quiero mi evaluación IA →
                 </ButtonLink>
-                <ButtonLink href="#oferta" variant="secondary">
-                  Ver la oferta
+                <ButtonLink href="/lp/diagnostico-ia" variant="secondary">
+                  Ver cómo funciona
                 </ButtonLink>
-                <span className="text-sm text-faint">
-                  Diagnóstico{" "}
-                  <span className="font-semibold text-gold">$149</span> · se
-                  descuenta si avanzas
-                </span>
               </div>
+              <p className="text-sm text-faint">
+                <span className="font-semibold text-gold">$149</span>{" "}
+                <span className="line-through">$300</span> · se descuenta si
+                avanzas · sin compromiso
+              </p>
 
               <div className="flex flex-wrap gap-2 pt-2">
                 {trustBadges.map((badge) => (
@@ -144,6 +148,64 @@ export default function HomePage() {
             label="AI Infrastructure Score™"
             description="Medimos tu madurez digital antes de construir nada."
           />
+        </Container>
+      </section>
+
+      {/* CENTRAL EVALUATION CTA */}
+      <section id="evaluacion" className="scroll-mt-24 pt-24">
+        <Container>
+          <div className="reveal relative overflow-hidden rounded-[32px] border border-accent/30 bg-[linear-gradient(135deg,rgba(13,148,136,0.12),rgba(180,83,9,0.06)_55%,#ffffff)] p-8 text-center shadow-[0_40px_90px_-50px_rgba(13,148,136,0.45)] sm:p-14">
+            <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
+            <div className="pointer-events-none absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
+            <div className="relative mx-auto max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                El primer paso · sin riesgo
+              </span>
+              <h2 className="text-balance text-3xl font-bold tracking-tight text-copy sm:text-5xl">
+                Descubre en 45 minutos por qué tu empresa pierde clientes.
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg leading-8 text-muted">
+                El{" "}
+                <span className="font-semibold text-copy">
+                  Diagnóstico Estratégico IA™
+                </span>{" "}
+                mide tu negocio sobre 100 puntos con el AI Infrastructure Score™
+                y te entrega un informe con las 3 prioridades que más te frenan y
+                tu roadmap para crecer.
+              </p>
+              <div className="flex items-center justify-center gap-3">
+                <span className="text-4xl font-bold text-gold sm:text-5xl">
+                  $149
+                </span>
+                <div className="text-left text-sm text-muted">
+                  <p className="text-faint line-through">$300</p>
+                  <p>se descuenta si avanzas</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <ButtonLink
+                  href={siteConfig.calendlyUrl}
+                  external
+                  className="px-8 py-4 text-base"
+                >
+                  Quiero mi evaluación IA →
+                </ButtonLink>
+                <ButtonLink
+                  href="/lp/diagnostico-ia"
+                  variant="secondary"
+                  className="px-8 py-4 text-base"
+                >
+                  Ver todo lo que incluye
+                </ButtonLink>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 text-sm text-muted">
+                <span>✓ 45 minutos</span>
+                <span>✓ Informe en 24 h</span>
+                <span>✓ Crédito de $149</span>
+                <span>✓ Sin compromiso</span>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
