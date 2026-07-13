@@ -34,14 +34,6 @@ export function SiteFooter() {
                 WhatsApp
               </a>
             ) : null}
-            <a
-              href={siteConfig.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent"
-            >
-              GitHub
-            </a>
           </div>
         </div>
         <div className="grid gap-3 text-sm text-muted md:justify-self-end">
