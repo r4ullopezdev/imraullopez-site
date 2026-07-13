@@ -295,7 +295,71 @@ export const faqs = [
 ];
 
 export const contactFilters = [
-  "Trabajo con empresas que quieren implementar soluciones reales, no experimentos sin presupuesto.",
-  "Si buscas una prueba barata o solo una charla sobre IA, probablemente no soy la opción correcta.",
+  "Trabajamos con empresas que quieren implementar soluciones reales, no experimentos sin presupuesto.",
+  "Si buscas una prueba barata o solo una charla sobre IA, probablemente no somos la opción correcta.",
   "Si quieres un sistema que reduzca trabajo manual y mejore operación o ventas, sí podemos hablar.",
+];
+
+export type Offer = {
+  name: string;
+  price: string;
+  priceNote: string;
+  tagline: string;
+  features: string[];
+  cta: { href: string; label: string; external?: boolean };
+  highlight?: boolean;
+  badge?: string;
+};
+
+export const offerLadder: Offer[] = [
+  {
+    name: "Diagnóstico Estratégico IA™",
+    price: "$149",
+    priceNote: "Normal $300 · se descuenta si avanzas",
+    tagline: "Mide tu empresa sobre 100 puntos y recibe tu hoja de ruta.",
+    features: [
+      "Reunión de diagnóstico de 45–60 min",
+      "AI Infrastructure Score™ (0–100)",
+      "Informe profesional + roadmap priorizado",
+      "Propuesta con crédito de $149 aplicado",
+    ],
+    cta: { href: "/lp/diagnostico-ia", label: "Empieza aquí" },
+    badge: "Empieza aquí",
+  },
+  {
+    name: "Starter Setup Sprint™",
+    price: "$1.300",
+    priceNote: "Único + $49/mes · entrega en 7–10 días",
+    tagline:
+      "La infraestructura digital mínima de una empresa moderna, instalada.",
+    features: [
+      "Web de conversión + hosting + dominio + SSL",
+      "Google Business + Analytics + integración WhatsApp",
+      "SEO técnico + velocidad + copias de seguridad",
+      "Perfil Nano Pro + Directorio Digital de Panamá",
+      "Lista para automatizaciones, CRM y agentes de IA",
+    ],
+    cta: {
+      href: "https://calendly.com/raul-lopez/diagnostico-ia",
+      label: "Agendar diagnóstico",
+      external: true,
+    },
+    highlight: true,
+    badge: "El más elegido",
+  },
+  {
+    name: "Proyectos a medida",
+    price: "Presupuesto",
+    priceNote: "Comercial · Operativa · Enterprise · Director IA",
+    tagline:
+      "Cuando el sistema supera el Starter: automatización, agentes y dirección IA.",
+    features: [
+      "Infraestructura Comercial IA™",
+      "Infraestructura Operativa IA™",
+      "Infraestructura IA Enterprise™",
+      "Director IA Externo™ (desde $500/mes)",
+    ],
+    cta: { href: "/contacto", label: "Hablar de tu caso" },
+    badge: "Escala",
+  },
 ];

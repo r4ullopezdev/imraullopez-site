@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import { GlassPanel } from "@/components/glass-panel";
 import { buildMetadata } from "@/lib/metadata";
@@ -35,20 +35,12 @@ export default async function ThankYouPage({
             sistema con mejor retorno para implementar primero.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href={siteConfig.calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-cyan-200/70 bg-[#f3fbff] px-5 py-3 text-sm font-semibold text-[#06111c] transition hover:bg-white"
-            >
+            <ButtonLink href={siteConfig.calendlyUrl} external>
               Reservar llamada ahora
-            </a>
-            <Link
-              href="/"
-              className="rounded-full border border-white/14 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/[0.06]"
-            >
+            </ButtonLink>
+            <ButtonLink href="/" variant="secondary">
               Volver al inicio
-            </Link>
+            </ButtonLink>
           </div>
         </GlassPanel>
       </Container>

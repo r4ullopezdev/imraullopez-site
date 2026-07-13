@@ -15,10 +15,10 @@ export function SectionHeading({
     <div className="max-w-3xl space-y-4">
       <Badge>{eyebrow}</Badge>
       <div className="space-y-3">
-        <h2 className="text-balance text-3xl font-semibold tracking-tight text-[#102033] sm:text-4xl">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight text-copy sm:text-4xl">
           {title}
         </h2>
-        <p className="max-w-2xl text-pretty text-base leading-7 text-[#5a6472] sm:text-lg">
+        <p className="max-w-2xl text-pretty text-base leading-7 text-muted sm:text-lg">
           {description}
         </p>
       </div>

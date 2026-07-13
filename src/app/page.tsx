@@ -1,23 +1,26 @@
+import { Badge } from "@/components/badge";
 import { BulletGrid } from "@/components/bullet-grid";
 import { ButtonLink } from "@/components/button-link";
 import { CaseStudyCard } from "@/components/case-study-card";
 import { Container } from "@/components/container";
 import { CtaBand } from "@/components/cta-band";
+import { FaqList } from "@/components/faq-list";
 import { GlassPanel } from "@/components/glass-panel";
-import { LeadForm } from "@/components/lead-form";
 import { MetricCard } from "@/components/metric-card";
+import { PricingCard } from "@/components/pricing-card";
 import { ProcessStep } from "@/components/process-step";
+import { ScoreVisual } from "@/components/score-visual";
 import { SectionHeading } from "@/components/section-heading";
 import { TestimonialCard } from "@/components/testimonial-card";
 import {
+  faqs,
   featuredProjects,
+  offerLadder,
   outcomes,
   painPoints,
-  process7Days,
   siteConfig,
   testimonials,
   trustBadges,
-  whyRaul,
 } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -27,297 +30,244 @@ export const metadata = buildMetadata(
   "/",
 );
 
-const heroPoints = [
-  "Automatizacion operativa en 7 dias",
-  "Sistemas de seguimiento y conversion de leads",
-  "Integraciones reales con CRM, WhatsApp, email y dashboards",
+const funnel = [
+  {
+    day: "01",
+    title: "Diagnóstico",
+    text: "En 45 min evaluamos tu empresa y calculamos tu AI Infrastructure Score™.",
+  },
+  {
+    day: "02",
+    title: "Roadmap",
+    text: "Recibes un informe con tu puntuación y las 3 prioridades de mayor impacto.",
+  },
+  {
+    day: "03",
+    title: "Implementación",
+    text: "Instalamos la infraestructura del Starter Setup en 7–10 días.",
+  },
+  {
+    day: "04",
+    title: "Escala",
+    text: "Sumamos automatización, agentes y dirección IA cuando el negocio lo pide.",
+  },
 ];
 
-const buyerSignals = [
-  "Empresas con procesos repetitivos y cuello de botella operativo",
-  "Equipos comerciales que responden tarde o hacen seguimiento manual",
-  "Negocios que quieren implementar IA con retorno, no experimentar sin rumbo",
+const agentCapabilities = [
+  {
+    title: "Captan y siguen leads",
+    text: "Responden, califican, agendan y empujan cada lead al siguiente paso sin seguimiento manual.",
+  },
+  {
+    title: "Ejecutan tareas internas",
+    text: "Generan reportes, mueven información, validan datos y reducen la carga administrativa repetitiva.",
+  },
+  {
+    title: "Conectan tus herramientas",
+    text: "WhatsApp, email, CRM, formularios, dashboards y APIs funcionando como un solo sistema.",
+  },
+  {
+    title: "Escalan con control",
+    text: "Con trazabilidad y reglas, para que crezcas sin depender de personas para microtareas.",
+  },
 ];
 
 export default function HomePage() {
   return (
     <div className="pb-24">
-      <section className="pt-20 sm:pt-28">
+      {/* HERO */}
+      <section className="relative pt-16 sm:pt-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] glow-accent" />
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-            <div className="space-y-8">
-              <div className="inline-flex rounded-full border border-[#cde4ea] bg-[#e8f7f7] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#28606d]">
-                Infraestructura digital · IA · automatizacion · agentes
-              </div>
+          <div className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="space-y-7">
+              <Badge>Infraestructura digital · IA · Automatización · Agentes</Badge>
 
-              <div className="space-y-5">
-                <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-tight text-[#102033] sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
-                  Construimos la infraestructura digital que tu empresa necesita
-                  para operar y crecer con IA.
-                </h1>
+              <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-copy sm:text-5xl lg:text-6xl">
+                Deja de perder clientes por no tener la{" "}
+                <span className="text-accent">infraestructura</span> de una
+                empresa moderna.
+              </h1>
 
-                <p className="max-w-3xl text-pretty text-xl leading-9 text-[#495668]">
-                  En dias implementamos agentes de IA, automatizaciones e
-                  integraciones que sustituyen entre un 30 % y un 60 % del
-                  trabajo administrativo repetitivo y conectan tu operacion real.
-                </p>
+              <p className="max-w-xl text-pretty text-lg leading-8 text-muted">
+                Medimos tu empresa sobre 100 puntos con el AI Infrastructure
+                Score™ y construimos los cimientos —web, captación, seguimiento,
+                automatización y agentes de IA— para que crezcas con criterio.
+              </p>
 
-                <p className="max-w-3xl text-base leading-8 text-[#5a6472]">
-                  No vendemos tecnologia por moda. Empezamos midiendo tu madurez
-                  digital con el AI Infrastructure Score™ y construimos los
-                  cimientos para responder leads mas rapido, reducir tareas
-                  manuales y darle a tu equipo mas tiempo para vender y crecer.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <ButtonLink href={siteConfig.calendlyUrl} external>
-                  Agendar diagnostico IA
+                  Agendar diagnóstico
                 </ButtonLink>
-                <ButtonLink href="/portfolio" variant="secondary">
-                  Ver proyectos
+                <ButtonLink href="#oferta" variant="secondary">
+                  Ver la oferta
                 </ButtonLink>
+                <span className="text-sm text-faint">
+                  Diagnóstico{" "}
+                  <span className="font-semibold text-gold">$149</span> · se
+                  descuenta si avanzas
+                </span>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                {heroPoints.map((point) => (
-                  <GlassPanel key={point} className="p-4">
-                    <p className="text-sm font-medium leading-6 text-[#233142]">
-                      {point}
-                    </p>
-                  </GlassPanel>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {trustBadges.map((badge) => (
                   <div
                     key={badge}
-                    className="rounded-full border border-[#d9e2ec] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#556274]"
+                    className="rounded-full border border-line bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-copy/70"
                   >
                     {badge}
                   </div>
                 ))}
               </div>
-
-              <p className="max-w-3xl text-sm font-medium uppercase tracking-[0.18em] text-[#8a5320]">
-                Fundador de NANOTEC / NANO, con mas de 10.000 usuarios y apoyo
-                de Microsoft for Startups.
-              </p>
             </div>
 
-            <LeadForm source="home-hero" />
+            <ScoreVisual />
           </div>
         </Container>
       </section>
 
+      {/* METRICS */}
       <section className="pt-24">
         <Container className="grid gap-4 md:grid-cols-3">
           <MetricCard
-            value="30 % - 60 %"
-            label="Trabajo repetitivo sustituible"
-            description="Procesos administrativos, seguimiento y tareas internas que pueden salir del equipo humano."
+            value="10.000+"
+            label="Usuarios en NANOTEC / NANO"
+            description="Producto propio validado, con apoyo de Microsoft for Startups."
           />
           <MetricCard
-            value="7 dias"
-            label="Primera implementacion"
-            description="La prioridad es dejar un sistema util funcionando rapido y optimizar despues con uso real."
+            value="7–10 días"
+            label="Entrega del Starter Setup"
+            description="Infraestructura funcionando rápido, no en meses."
           />
           <MetricCard
-            value="$1.500 - $10.000+"
-            label="Rango de proyecto"
-            description="Trabajo con empresas que quieren implementacion real, no presentaciones vacias."
+            value="0–100"
+            label="AI Infrastructure Score™"
+            description="Medimos tu madurez digital antes de construir nada."
           />
         </Container>
       </section>
 
+      {/* PROBLEM */}
+      <section className="pt-24">
+        <Container className="space-y-10">
+          <SectionHeading
+            eyebrow="El problema"
+            title="Si esto pasa en tu empresa, estás dejando dinero sobre la mesa cada semana."
+            description="La mayoría de las PYMEs no tiene un problema de esfuerzo, sino de infraestructura: piezas sueltas que no capturan, no siguen y no miden."
+          />
+          <BulletGrid items={painPoints} />
+        </Container>
+      </section>
+
+      {/* METHOD / SCORE */}
       <section className="pt-24">
         <Container>
-          <div className="rounded-[32px] border border-[#cde4ea] bg-gradient-to-br from-[#eef7f9] to-[#f7f3ec] p-8 sm:p-12">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div className="space-y-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#28606d]">
-                  Empieza aqui
-                </p>
-                <h2 className="text-3xl font-semibold tracking-tight text-[#102033] sm:text-4xl">
-                  Diagnostico Estrategico IA™: mide tu empresa sobre 100 puntos.
-                </h2>
-                <p className="text-base leading-8 text-[#4a5768]">
-                  En 45 minutos evaluamos tu presencia digital, captacion,
-                  seguimiento, automatizacion y uso de IA con el AI
-                  Infrastructure Score™. Recibes un informe profesional, tu
-                  puntuacion y un roadmap priorizado. $149 (normal $300) y se
-                  descuenta integramente si avanzas con un proyecto.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <ButtonLink href="/lp/diagnostico-ia">
-                    Ver el diagnostico
-                  </ButtonLink>
-                  <ButtonLink
-                    href={siteConfig.calendlyUrl}
-                    external
-                    variant="secondary"
-                  >
-                    Agendar ahora
-                  </ButtonLink>
+          <div className="grid gap-10 rounded-[28px] border border-line bg-surface/60 p-8 sm:p-12 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-6">
+              <Badge>El método</Badge>
+              <h2 className="text-balance text-3xl font-semibold tracking-tight text-copy sm:text-4xl">
+                Todo empieza con un número: tu AI Infrastructure Score™.
+              </h2>
+              <p className="text-base leading-8 text-muted">
+                Antes de venderte nada, medimos tu empresa en 10 categorías y te
+                damos una puntuación de 0 a 100. Ese número te dice exactamente
+                dónde pierdes clientes o tiempo, y el roadmap para subirlo.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <ButtonLink href="/lp/diagnostico-ia">
+                  Cómo funciona el diagnóstico
+                </ButtonLink>
+                <ButtonLink href={siteConfig.calendlyUrl} external variant="secondary">
+                  Agendar ahora
+                </ButtonLink>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                "Presencia Digital",
+                "Captación de Clientes",
+                "Seguimiento Comercial",
+                "Experiencia del Cliente",
+                "Automatización",
+                "Uso de IA",
+                "Procesos Operativos",
+                "Datos y Analítica",
+                "Comunicación Interna",
+                "Escalabilidad",
+              ].map((c) => (
+                <div
+                  key={c}
+                  className="rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm text-copy/80"
+                >
+                  {c}
                 </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  [
-                    "10 categorias",
-                    "Presencia, captacion, seguimiento, IA, datos, procesos y mas.",
-                  ],
-                  [
-                    "Score 0-100",
-                    "Un numero claro y una banda de madurez digital.",
-                  ],
-                  [
-                    "Informe + roadmap",
-                    "Prioridades Ahora / Proximo / Despues.",
-                  ],
-                  [
-                    "Credito de $149",
-                    "Se descuenta si contratas un proyecto.",
-                  ],
-                ].map(([title, text]) => (
-                  <GlassPanel key={title} className="p-5">
-                    <p className="text-base font-semibold text-[#102033]">
-                      {title}
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-[#5a6472]">
-                      {text}
-                    </p>
-                  </GlassPanel>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="pt-24">
+      {/* OFFER LADDER */}
+      <section id="oferta" className="scroll-mt-24 pt-24">
         <Container className="space-y-10">
           <SectionHeading
-            eyebrow="Que resuelvo"
-            title="Si tu operacion depende de seguimiento manual, tareas repetitivas y respuesta lenta, ahi es donde entro."
-            description="Normalmente trabajo en puntos donde se pierde dinero, tiempo comercial o control operativo por falta de sistema."
+            eyebrow="Cómo trabajamos contigo"
+            title="Una escalera clara: mide, instala los cimientos y escala."
+            description="Empiezas con un diagnóstico de bajo riesgo. Si el número lo justifica, instalamos tu infraestructura y luego sumamos automatización y agentes."
           />
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <BulletGrid items={painPoints} />
-            <GlassPanel className="p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8a5320]">
-                Empresas para las que encaja mejor
-              </p>
-              <div className="mt-5 space-y-4">
-                {buyerSignals.map((signal) => (
-                  <div
-                    key={signal}
-                    className="rounded-2xl border border-[#e7edf4] bg-[#fbfdff] px-4 py-4 text-sm leading-7 text-[#435164]"
-                  >
-                    {signal}
-                  </div>
-                ))}
-              </div>
-            </GlassPanel>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {offerLadder.map((offer) => (
+              <PricingCard key={offer.name} offer={offer} />
+            ))}
           </div>
+          <p className="text-center text-sm text-faint">
+            El importe del diagnóstico ($149) se descuenta íntegramente si
+            contratas un proyecto dentro de 30 días.
+          </p>
         </Container>
       </section>
 
+      {/* OUTCOMES */}
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
             eyebrow="Resultados"
-            title="El objetivo no es tener IA. El objetivo es operar con menos friccion y mas rendimiento."
-            description="Cada implementacion tiene que mover una metrica real: tiempo, velocidad comercial, calidad de seguimiento, control o capacidad operativa."
+            title="El objetivo no es tener IA. Es operar con menos fricción y más rendimiento."
+            description="Cada implementación mueve una métrica real: tiempo, velocidad comercial, calidad de seguimiento o capacidad operativa."
           />
           <BulletGrid items={outcomes} columns="md:grid-cols-2" />
         </Container>
       </section>
 
+      {/* AGENTS */}
       <section className="pt-24">
-        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="Agentes de IA"
-            title="Construyo agentes de IA que trabajan como empleados digitales dentro de tu negocio."
-            description="Con reglas, memoria, herramientas e integraciones. No como un chatbot bonito aislado, sino como parte de tu flujo real."
+            title="Agentes que trabajan como empleados digitales dentro de tu negocio."
+            description="Con reglas, memoria, herramientas e integraciones. No un chatbot aislado, sino parte de tu flujo real."
           />
           <div className="grid gap-4 md:grid-cols-2">
-            <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-[#102033]">
-                Captan y siguen leads
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#5a6472]">
-                Responden, clasifican, agendan, recuerdan y empujan cada lead
-                hacia el siguiente paso sin depender de seguimiento manual.
-              </p>
-            </GlassPanel>
-            <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-[#102033]">
-                Ejecutan tareas internas
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#5a6472]">
-                Generan reportes, mueven informacion, validan datos, notifican
-                al equipo y reducen carga administrativa repetitiva.
-              </p>
-            </GlassPanel>
-            <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-[#102033]">
-                Conectan herramientas
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#5a6472]">
-                Formularios, WhatsApp, email, CRM, bases de datos, dashboards y
-                APIs funcionando como un solo sistema.
-              </p>
-            </GlassPanel>
-            <GlassPanel className="p-6">
-              <h3 className="text-xl font-semibold text-[#102033]">
-                Escalan con control
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#5a6472]">
-                Disenados para darte trazabilidad, velocidad operativa y menos
-                dependencia de personas para microtareas repetidas.
-              </p>
-            </GlassPanel>
-          </div>
-        </Container>
-      </section>
-
-      <section className="pt-24">
-        <Container className="space-y-10">
-          <SectionHeading
-            eyebrow="Proyectos destacados"
-            title="Casos que demuestran ejecucion tecnica y criterio de negocio."
-            description="No presento solo desarrollo. Presento sistemas, producto, operacion y crecimiento."
-          />
-          <div className="grid gap-5 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <CaseStudyCard key={project.title} {...project} />
+            {agentCapabilities.map((a) => (
+              <GlassPanel key={a.title} className="card-hover p-6">
+                <h3 className="text-lg font-semibold text-copy">{a.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{a.text}</p>
+              </GlassPanel>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="pt-24">
-        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeading
-            eyebrow="Por que yo"
-            title="Combino tecnologia, IA, marketing, ventas y experiencia real operando negocios."
-            description="Eso cambia la forma de construir. No pienso solo como desarrollador. Pienso en conversion, cuello de botella, operacion, margen y velocidad de ejecucion."
-          />
-          <BulletGrid items={whyRaul} columns="md:grid-cols-1" />
-        </Container>
-      </section>
-
+      {/* PROCESS / FUNNEL */}
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
-            eyebrow="Proceso en 7 dias"
-            title="En una semana puedes tener un sistema funcionando, no una presentacion bonita."
-            description="La logica es simple: detectar impacto rapido, implementar una primera version util y mejorar desde datos de uso."
+            eyebrow="El proceso"
+            title="De diagnóstico a sistema, sin consultorías eternas."
+            description="Un camino simple y medible, diseñado para mover una parte real de tu operación rápido."
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {process7Days.map((step) => (
+            {funnel.map((step) => (
               <ProcessStep
                 key={step.day}
                 step={step.day}
@@ -329,12 +279,29 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* AUTHORITY / PROOF */}
+      <section className="pt-24">
+        <Container className="space-y-10">
+          <SectionHeading
+            eyebrow="Autoridad"
+            title="Detrás de Infraestructura IA hay producto, ventas y operación real."
+            description="No solo desarrollo. Experiencia construyendo tecnología propia, vendiendo y operando negocios."
+          />
+          <div className="grid gap-5 lg:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <CaseStudyCard key={project.title} {...project} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* TESTIMONIALS */}
       <section className="pt-24">
         <Container className="space-y-10">
           <SectionHeading
             eyebrow="Prueba social"
-            title="La confianza aqui se gana con implementacion, criterio y resultados."
-            description="Esta seccion esta preparada para testimonios y casos medibles centrados en ahorro de tiempo, mejor seguimiento, mejor operacion y velocidad de entrega."
+            title="La confianza se gana con implementación, criterio y resultados."
+            description="Espacio preparado para testimonios y casos medibles de ahorro de tiempo, mejor seguimiento y velocidad de entrega."
           />
           <div className="grid gap-5 lg:grid-cols-2">
             {testimonials.map((testimonial) => (
@@ -344,15 +311,23 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* FAQ */}
+      <section className="pt-24">
+        <Container className="space-y-10">
+          <SectionHeading
+            eyebrow="Preguntas frecuentes"
+            title="Lo que suelen preguntar antes de empezar."
+            description="Si te queda una duda, escríbenos y la resolvemos antes de agendar."
+          />
+          <FaqList items={faqs} />
+        </Container>
+      </section>
+
       <CtaBand
-        title="Si tu empresa esta perdiendo tiempo en tareas repetitivas, leads frios o procesos manuales, podemos corregirlo."
-        text="Trabajo con empresas que quieren implementar soluciones reales de IA y automatizacion. Si buscas velocidad, criterio y sistema, agenda un diagnostico."
-        primary={{
-          href: siteConfig.calendlyUrl,
-          label: "Agendar diagnostico IA",
-          external: true,
-        }}
-        secondary={{ href: "/contacto", label: "Ir a contacto" }}
+        title="No inviertas en IA a ciegas. Primero mide dónde estás."
+        text="Agenda tu Diagnóstico Estratégico IA™, obtén tu AI Infrastructure Score™ y decide con datos tu siguiente paso."
+        primary={{ href: siteConfig.calendlyUrl, label: "Agendar diagnóstico", external: true }}
+        secondary={{ href: "/lp/diagnostico-ia", label: "Ver el diagnóstico" }}
       />
     </div>
   );

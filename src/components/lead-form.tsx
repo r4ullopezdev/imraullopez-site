@@ -28,6 +28,9 @@ const initialState: FormState = {
   problem: "",
 };
 
+const fieldClass =
+  "w-full rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm text-copy outline-none transition placeholder:text-faint focus:border-accent/70 focus:ring-2 focus:ring-accent/20";
+
 export function LeadForm({ source, compact = false }: LeadFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [loading, setLoading] = useState(false);
@@ -50,7 +53,7 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
     if (!response.ok) {
       setLoading(false);
       setError(
-        "No se pudo enviar el formulario. Intentalo otra vez o escribeme por WhatsApp.",
+        "No se pudo enviar el formulario. Inténtalo otra vez o escríbenos por WhatsApp.",
       );
       return;
     }
@@ -68,20 +71,20 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "space-y-4 rounded-[28px] border border-[#d9dfe7] bg-white p-6 shadow-[0_20px_70px_rgba(22,34,55,0.12)]",
+        "space-y-4 rounded-[24px] border border-line bg-surface shadow-[inset_0_1px_0_0_rgba(255,255,255,0.03),0_30px_80px_-40px_rgba(0,0,0,0.9)]",
         compact ? "p-5" : "p-7",
       )}
     >
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8a5320]">
-          Diagnostico IA
+        <p className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+          Diagnóstico · $149
         </p>
-        <h3 className="text-2xl font-semibold text-[#102033]">
-          Cuentame que quieres automatizar
+        <h3 className="text-2xl font-semibold text-copy">
+          Solicita tu diagnóstico
         </h3>
-        <p className="text-sm leading-7 text-[#5a6472]">
-          Trabajo con empresas que quieren implementar sistemas reales, no solo
-          explorar ideas sin ejecucion.
+        <p className="text-sm leading-7 text-muted">
+          Cuéntanos tu empresa y te enviamos el enlace para agendar. Trabajamos
+          con negocios que quieren implementar, no solo explorar.
         </p>
       </div>
 
@@ -118,7 +121,7 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
       </div>
 
       <label className="block space-y-2">
-        <span className="text-sm font-medium text-[#233447]">
+        <span className="text-sm font-medium text-copy/85">
           Presupuesto estimado
         </span>
         <select
@@ -127,7 +130,7 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
             setForm((current) => ({ ...current, budget: event.target.value }))
           }
           required
-          className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
+          className={fieldClass}
         >
           <option value="">Selecciona un rango</option>
           {leadBudgetOptions.map((option) => (
@@ -139,8 +142,8 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
       </label>
 
       <label className="block space-y-2">
-        <span className="text-sm font-medium text-[#233447]">
-          Problema principal
+        <span className="text-sm font-medium text-copy/85">
+          ¿Qué quieres resolver?
         </span>
         <textarea
           value={form.problem}
@@ -148,21 +151,24 @@ export function LeadForm({ source, compact = false }: LeadFormProps) {
             setForm((current) => ({ ...current, problem: event.target.value }))
           }
           required
-          rows={compact ? 4 : 6}
-          className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
-          placeholder="Describe que proceso manual, comercial o administrativo quieres resolver."
+          rows={compact ? 4 : 5}
+          className={fieldClass}
+          placeholder="Describe el proceso comercial u operativo que quieres mejorar."
         />
       </label>
 
-      {error ? <p className="text-sm text-rose-500">{error}</p> : null}
+      {error ? <p className="text-sm text-rose-400">{error}</p> : null}
 
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex w-full items-center justify-center rounded-full border border-[#102c46] bg-[#102c46] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0d2439] disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-[color:var(--color-accent-ink)] shadow-[0_10px_40px_-10px_rgba(45,212,191,0.6)] transition hover:bg-accent-2 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {loading ? "Enviando..." : "Agendar diagnostico IA"}
+        {loading ? "Enviando..." : "Solicitar diagnóstico"}
       </button>
+      <p className="text-center text-xs text-faint">
+        Respondemos en horas hábiles. Sin compromiso.
+      </p>
     </form>
   );
 }
@@ -184,13 +190,13 @@ function Field({
 }: FieldProps) {
   return (
     <label className="block space-y-2">
-      <span className="text-sm font-medium text-[#233447]">{label}</span>
+      <span className="text-sm font-medium text-copy/85">{label}</span>
       <input
         type={type}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         required={required}
-        className="w-full rounded-2xl border border-[#d5dce5] bg-[#fcfdff] px-4 py-3 text-sm text-[#102033] outline-none transition focus:border-[#7ca3c8]"
+        className="w-full rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm text-copy outline-none transition placeholder:text-faint focus:border-accent/70 focus:ring-2 focus:ring-accent/20"
       />
     </label>
   );

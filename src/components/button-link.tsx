@@ -9,13 +9,15 @@ type ButtonLinkProps = {
   external?: boolean;
 };
 
+const base =
+  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink";
+
 const variants = {
   primary:
-    "border border-[#0e2b47] bg-[#102c46] text-white shadow-[0_18px_40px_rgba(16,44,70,0.18)] hover:bg-[#0c2439]",
+    "bg-accent text-[color:var(--color-accent-ink)] shadow-[0_10px_40px_-10px_rgba(45,212,191,0.6)] hover:bg-accent-2 hover:shadow-[0_14px_50px_-8px_rgba(45,212,191,0.7)]",
   secondary:
-    "border border-[#cdd7e4] bg-white text-[#102033] hover:border-[#9db5d1] hover:bg-[#f8fbff]",
-  ghost:
-    "border border-[#d8d2c8] bg-[#fffaf3] text-[#5a6472] hover:border-[#c0b6a8] hover:bg-white",
+    "border border-line bg-white/[0.02] text-copy hover:border-accent/50 hover:bg-white/[0.05]",
+  ghost: "text-muted hover:text-copy",
 };
 
 export function ButtonLink({
@@ -25,11 +27,7 @@ export function ButtonLink({
   className,
   external = false,
 }: ButtonLinkProps) {
-  const classes = cn(
-    "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition",
-    variants[variant],
-    className,
-  );
+  const classes = cn(base, variants[variant], className);
 
   if (external) {
     return (

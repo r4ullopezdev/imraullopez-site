@@ -12,12 +12,12 @@ export function BulletGrid({
   return (
     <div className={`grid gap-4 ${columns}`}>
       {items.map((item) => (
-        <GlassPanel key={item} className="h-full p-5">
+        <GlassPanel key={item} className="card-hover h-full p-5">
           <div className="flex gap-3">
-            <span className="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#eef4fb] text-xs font-semibold text-[#0f3559]">
-              +
+            <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full border border-accent/30 bg-accent/12 text-xs font-semibold text-accent">
+              ✓
             </span>
-            <p className="text-sm leading-7 text-[#334155]">{item}</p>
+            <p className="text-sm leading-7 text-copy/85">{item}</p>
           </div>
         </GlassPanel>
       ))}

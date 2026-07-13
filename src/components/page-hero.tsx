@@ -20,16 +20,17 @@ export function PageHero({
   aside,
 }: PageHeroProps) {
   return (
-    <section className="pt-20 sm:pt-28">
+    <section className="relative pt-20 sm:pt-28">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] glow-accent" />
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div className="relative grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-7">
             <Badge>{eyebrow}</Badge>
             <div className="space-y-5">
-              <h1 className="max-w-5xl text-balance text-5xl font-semibold tracking-tight text-[#102033] sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-5xl text-balance text-4xl font-semibold tracking-tight text-copy sm:text-5xl lg:text-6xl lg:leading-[1.05]">
                 {title}
               </h1>
-              <p className="max-w-3xl text-pretty text-lg leading-8 text-[#5a6472] sm:text-xl">
+              <p className="max-w-2xl text-pretty text-lg leading-8 text-muted sm:text-xl">
                 {description}
               </p>
             </div>

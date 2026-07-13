@@ -7,6 +7,7 @@ import { GlassPanel } from "@/components/glass-panel";
 import { LeadForm } from "@/components/lead-form";
 import { MetricCard } from "@/components/metric-card";
 import { PageHero } from "@/components/page-hero";
+import { ScoreVisual } from "@/components/score-visual";
 import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
@@ -47,10 +48,10 @@ const forWho = [
 ];
 
 const steps = [
-  ["1 · Agenda y paga", "Reservas tu diagnóstico con el pago de $149 (se descuenta si avanzas)."],
-  ["2 · Reunión y Score", "En 45 min evaluamos tu empresa en las 10 categorías y calculamos tu Score."],
-  ["3 · Informe y roadmap", "Recibes el informe con tu puntuación y las 3 prioridades de mayor impacto."],
-  ["4 · Decides el siguiente paso", "Si avanzas, tu diagnóstico se descuenta del proyecto."],
+  ["01 · Agenda y paga", "Reservas tu diagnóstico con el pago de $149 (se descuenta si avanzas)."],
+  ["02 · Reunión y Score", "En 45 min evaluamos tu empresa en las 10 categorías y calculamos tu Score."],
+  ["03 · Informe y roadmap", "Recibes el informe con tu puntuación y las 3 prioridades de mayor impacto."],
+  ["04 · Decides", "Si avanzas, tu diagnóstico se descuenta del proyecto."],
 ];
 
 const faqs = [
@@ -62,12 +63,12 @@ const faqs = [
   {
     question: "¿Cuánto cuesta y qué incluye?",
     answer:
-      "El diagnóstico está en $149 (precio normal $300) e incluye la reunión, tu Score, el informe profesional, el roadmap priorizado y la propuesta. Si contratas un proyecto, los $149 se descuentan íntegramente.",
+      "El diagnóstico está en $149 (precio normal $300) e incluye la reunión, tu Score, el informe profesional, el roadmap y la propuesta. Si contratas un proyecto, los $149 se descuentan íntegramente.",
   },
   {
     question: "¿Cuánto dura y cómo es la reunión?",
     answer:
-      "Entre 45 y 60 minutos, por videollamada o presencial en Panamá. Es una conversación estructurada: escuchamos tu operación, puntuamos en vivo y te mostramos dónde estás perdiendo tiempo o clientes.",
+      "Entre 45 y 60 minutos, por videollamada o presencial en Panamá. Es una conversación estructurada: escuchamos tu operación, puntuamos en vivo y te mostramos dónde pierdes tiempo o clientes.",
   },
   {
     question: "¿Y si después no quiero contratar nada?",
@@ -82,10 +83,10 @@ export default function DiagnosticoIAPage() {
       <PageHero
         eyebrow="Diagnóstico Estratégico IA™"
         title="Mide la madurez digital de tu empresa sobre 100 puntos."
-        description="Antes de invertir en IA o automatización, necesitas saber dónde estás. En 45 minutos medimos tu empresa con el AI Infrastructure Score™ y te entregamos un informe con las prioridades que más te están frenando. $149 (normal $300) y se descuenta si avanzas con un proyecto."
+        description="Antes de invertir en IA o automatización, necesitas saber dónde estás. En 45 minutos medimos tu empresa con el AI Infrastructure Score™ y te entregamos un informe con las prioridades que más te están frenando. $149 (normal $300) y se descuenta si avanzas."
         primaryCta={{ href: siteConfig.calendlyUrl, label: "Agendar diagnóstico ($149)", external: true }}
         secondaryCta={{ href: "#form", label: "Solicitar por formulario" }}
-        aside={<LeadForm source="landing-diagnostico" compact />}
+        aside={<ScoreVisual />}
       />
 
       <section className="pt-20">
@@ -101,8 +102,8 @@ export default function DiagnosticoIAPage() {
             description="Una conversación estructurada, con tu Score puntuado en vivo."
           />
           <MetricCard
-            value="0–100"
-            label="AI Infrastructure Score™"
+            value="< 24 h"
+            label="Entrega del informe"
             description="Tu número, tu banda de madurez y tu hoja de ruta priorizada."
           />
         </Container>
@@ -139,63 +140,62 @@ export default function DiagnosticoIAPage() {
           />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {steps.map(([title, text]) => (
-              <GlassPanel key={title} className="p-6">
-                <h3 className="text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
+              <GlassPanel key={title} className="card-hover p-6">
+                <h3 className="text-lg font-semibold text-copy">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{text}</p>
               </GlassPanel>
             ))}
           </div>
         </Container>
       </section>
 
+      {/* PRICING / FOR WHO */}
       <section className="pt-24">
         <Container>
-          <div className="rounded-[32px] border border-[#cde4ea] bg-gradient-to-br from-[#eef7f9] to-[#f7f3ec] p-8 sm:p-12">
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div className="space-y-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#28606d]">
-                  Inversión
-                </p>
-                <h2 className="text-3xl font-semibold tracking-tight text-[#102033] sm:text-4xl">
-                  $149 hoy. $0 de riesgo si avanzas.
-                </h2>
-                <p className="text-base leading-8 text-[#4a5768]">
-                  El diagnóstico cuesta $149 (precio normal $300) como tarifa de
-                  Cliente Fundador. Si contratas un proyecto, se descuenta
-                  íntegramente. Cobramos por Stripe (internacional) o Yappy / ACH
-                  (Panamá).
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <ButtonLink href={siteConfig.calendlyUrl} external>
-                    Agendar mi diagnóstico
-                  </ButtonLink>
-                  <ButtonLink href="#form" variant="secondary">
-                    Prefiero el formulario
-                  </ButtonLink>
-                </div>
+          <div className="grid gap-8 rounded-[28px] border border-accent/25 bg-[linear-gradient(135deg,rgba(45,212,191,0.08),rgba(16,21,31,0.9))] p-8 sm:p-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="space-y-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+                Inversión
+              </span>
+              <h2 className="text-3xl font-semibold tracking-tight text-copy sm:text-4xl">
+                $149 hoy. $0 de riesgo si avanzas.
+              </h2>
+              <p className="text-base leading-8 text-muted">
+                El diagnóstico cuesta $149 (precio normal $300) como tarifa de
+                Cliente Fundador. Si contratas un proyecto, se descuenta
+                íntegramente. Cobramos por Stripe (internacional) o Yappy / ACH
+                (Panamá).
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <ButtonLink href={siteConfig.calendlyUrl} external>
+                  Agendar mi diagnóstico
+                </ButtonLink>
+                <ButtonLink href="#form" variant="secondary">
+                  Prefiero el formulario
+                </ButtonLink>
               </div>
-              <GlassPanel className="p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a5320]">
-                  Para quién es
-                </p>
-                <div className="mt-4 space-y-3">
-                  {forWho.map((item) => (
-                    <p
-                      key={item}
-                      className="rounded-2xl border border-[#e7edf4] bg-[#fbfdff] px-4 py-3 text-sm leading-7 text-[#435164]"
-                    >
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </GlassPanel>
             </div>
+            <GlassPanel className="p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                Para quién es
+              </p>
+              <div className="mt-4 space-y-3">
+                {forWho.map((item) => (
+                  <p
+                    key={item}
+                    className="rounded-xl border border-line bg-surface-2 px-4 py-3 text-sm leading-7 text-copy/85"
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </GlassPanel>
           </div>
         </Container>
       </section>
 
-      <section id="form" className="pt-24">
-        <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <section id="form" className="scroll-mt-24 pt-24">
+        <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <SectionHeading
             eyebrow="Solicita tu diagnóstico"
             title="Cuéntanos tu empresa y te enviamos el enlace para agendar."
