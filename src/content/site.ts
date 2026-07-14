@@ -9,7 +9,14 @@ export const siteConfig = {
   githubUrl: "https://github.com/r4ullopezdev",
   linkedinUrl: "https://www.linkedin.com",
   calendlyUrl: "https://calendly.com/imraullopez/diagnostico-personalizado-ia",
+  // Link de pago de Stripe del Diagnóstico ($149). Cuando Raúl lo cree, se pone
+  // en la variable de entorno NEXT_PUBLIC_STRIPE_DIAGNOSTICO en Vercel y todos
+  // los botones de la landing pasan a cobrar directamente.
+  // Mientras no exista, los botones llevan a Calendly (agendar) para no perder leads.
+  stripeDiagnosticoUrl: process.env.NEXT_PUBLIC_STRIPE_DIAGNOSTICO ?? "",
   primaryProjectUrl: "https://github.com/r4ullopezdev/nano-agent-stack",
+  precioDiagnostico: 149,
+  precioDiagnosticoNormal: 300,
   title:
     "Infraestructura IA™ | Infraestructura digital con IA, automatización y agentes para empresas",
   description:
