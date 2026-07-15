@@ -26,7 +26,7 @@ export const siteConfig = {
   heroMessage:
     "La infraestructura digital que tu empresa necesita para operar y crecer con IA.",
   authorityLine:
-    "Dirigida por Raúl López — analista de datos por Microsoft, speaker internacional de IA y fundador respaldado por Microsoft.",
+    "Dirigida por Raúl López — analista de datos por Microsoft, speaker internacional de IA y fundador de NANO.",
   analytics: {
     gaMeasurementId: process.env.NEXT_PUBLIC_GA_ID ?? "",
     metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",
@@ -49,7 +49,7 @@ export const leadBudgetOptions = [
 ];
 
 export const trustBadges = [
-  "Respaldada por Microsoft (+$140k)",
+  "Dirigida por un analista de datos por Microsoft",
   "Dirigida por un speaker internacional de IA",
   "Experiencia con bancos y gobiernos",
   "IA aplicada + automatización + funnels",
@@ -186,9 +186,9 @@ export const founderCredentials = [
     title: "Analista de datos por Microsoft",
     label: "Respaldo tecnológico",
     summary:
-      "Analista de datos certificado por Microsoft. Su empresa fue seleccionada y patrocinada por Microsoft con más de $140.000 en respaldo.",
+      "Analista de datos certificado por Microsoft. Fundó NANO, empresa seleccionada y patrocinada por Microsoft con más de $140.000 en respaldo.",
     impact: [
-      "+$140.000 de patrocinio de Microsoft",
+      "NANO: +$140.000 de patrocinio de Microsoft",
       "Analista de datos certificado",
       "Tecnología validada, no teoría",
     ],

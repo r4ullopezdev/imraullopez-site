@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata(
   "Dirección | Infraestructura IA está dirigida por Raúl López",
-  "Infraestructura IA está dirigida por Raúl López: analista de datos por Microsoft, speaker internacional de IA, respaldado por Microsoft con más de $140.000, con experiencia junto a bancos, gobiernos y grandes empresas.",
+  "Infraestructura IA está dirigida por Raúl López: analista de datos por Microsoft, speaker internacional de IA, fundador de NANO (empresa patrocinada por Microsoft con más de $140.000), con experiencia junto a bancos, gobiernos y grandes empresas.",
   "/sobre-mi",
 );
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-sm leading-7 text-muted">
               <p>
                 <span className="font-semibold text-copy">Analista de datos por Microsoft.</span>{" "}
-                Su empresa fue patrocinada por Microsoft con más de{" "}
+                Fundó NANO, empresa que Microsoft patrocinó con más de{" "}
                 <span className="font-semibold text-copy">$140.000</span>.
               </p>
               <p>
@@ -61,9 +61,9 @@ export default function AboutPage() {
             <GlassPanel className="p-6">
               <h3 className="text-xl font-semibold text-copy">Microsoft: datos y respaldo</h3>
               <p className="mt-3 text-sm leading-7 text-muted">
-                Analista de datos certificado por Microsoft. Su empresa fue
+                Analista de datos certificado por Microsoft. Fundó NANO, empresa
                 seleccionada y patrocinada por Microsoft con más de $140.000, una
-                validación real de la tecnología detrás del proyecto.
+                validación real de la tecnología detrás de su trabajo.
               </p>
             </GlassPanel>
             <GlassPanel className="p-6">

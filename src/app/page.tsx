@@ -133,8 +133,8 @@ export default function HomePage() {
         <Container className="grid gap-4 md:grid-cols-3">
           <MetricCard
             value="+$140k"
-            label="Respaldo de Microsoft"
-            description="Su fundador es analista de datos por Microsoft y su empresa fue patrocinada con más de $140.000."
+            label="Su fundador, respaldado por Microsoft"
+            description="Raúl López es analista de datos por Microsoft y fundó NANO, empresa que Microsoft patrocinó con más de $140.000."
           />
           <MetricCard
             value="7–10 días"
@@ -345,7 +345,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Dirección"
             title="Infraestructura IA está dirigida por Raúl López."
-            description="Analista de datos por Microsoft, speaker internacional de IA y fundador respaldado por Microsoft. No solo desarrollo: criterio de negocio, ejecución real y experiencia con bancos, gobiernos y grandes empresas."
+            description="Analista de datos por Microsoft, speaker internacional de IA y fundador de NANO (empresa patrocinada por Microsoft con +$140.000). No solo desarrollo: criterio de negocio, ejecución real y experiencia con bancos, gobiernos y grandes empresas."
           />
           <div className="grid gap-5 lg:grid-cols-3">
             {founderCredentials.map((cred) => (

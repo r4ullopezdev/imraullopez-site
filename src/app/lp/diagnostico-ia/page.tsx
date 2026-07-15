@@ -108,7 +108,7 @@ export default function DiagnosticoLanding() {
             <Cta />
           </div>
           <p className="mt-8 text-sm text-muted">
-            Dirigido por Raúl López · Analista de datos por Microsoft · Respaldado por Microsoft con +$140.000
+            Dirigido por Raúl López · Analista de datos por Microsoft · Fundador de NANO (+$140.000 de Microsoft)
           </p>
         </Container>
       </section>
@@ -226,7 +226,7 @@ export default function DiagnosticoLanding() {
               El diagnóstico lo dirige Raúl López, en persona.
             </h2>
             <p className="mt-4 text-base leading-7 text-muted">
-              Analista de datos por Microsoft. Su empresa fue patrocinada por Microsoft con más de{" "}
+              Analista de datos por Microsoft. Fundó NANO, empresa que Microsoft patrocinó con más de{" "}
               <span className="font-semibold text-copy">$140.000</span>. Speaker internacional de IA:
               conferencias en universidades de Panamá y ponente en el Congreso de Turismo de Venezuela. Ha
               trabajado de la mano con bancos y gobiernos.
